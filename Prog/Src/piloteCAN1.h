@@ -29,7 +29,8 @@
 //Fonctions publiques:
 unsigned int piloteCAN1_messageDisponible(void);
 unsigned int piloteCAN1_messageTransmis(void);
-unsigned char piloteCAN1_litUnMessageRecu(unsigned char *DonneesRecues);
+unsigned char piloteCAN1_litUnMessageRecu(unsigned char* DonneesRecues,
+                                          unsigned char* callerId);
 unsigned int piloteCAN1_transmetDesDonnes(unsigned int Identification11Bits,
                                           unsigned char *Donnees,
                                           unsigned char Nombre);

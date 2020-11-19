@@ -16,6 +16,7 @@ unsigned char valueOfInputBoard1;
 unsigned char valueOfInputBoard2;
 unsigned char valueOfPassageParZero;
 unsigned char valueOfAdc;
+unsigned char elapsedTimeInMsFromMasterSync;
 
 extern service_applicationInputHandler_Data service_applicationInputHandler_data;
 
@@ -32,6 +33,7 @@ void service_applicationInputHandler_init() {
     valueOfInputBoard2 = 0;
     valueOfPassageParZero = 0;
     valueOfAdc = 0;
+    elapsedTimeInMsFromMasterSync = 0;
     serviceBaseDeTemps_execute[SERVICEBASEDETEMPS_PHASE_UPDATE_APP_INPUTS]
         = service_applicationInputHandler_update;
 }
@@ -44,6 +46,7 @@ void service_applicationInputHandler_update() {
     updateKnowledgeOfBoard2();
     updateKnowledgeOfTriac();
     updateKnowledgeOfAdc();
+    updateKnowledgeOfCan();
     // please refer to the connection table and schematic in the documentation for further info on physical connections
 }
 
@@ -89,4 +92,8 @@ void updateKnowledgeOfTriac() {
 
 void updateKnowledgeOfAdc() {
     service_applicationInputHandler_data.detecteurHauteurBloc = valueOfAdc;
+}
+
+void updateKnowledgeOfCan() {
+    service_can_receiving_update();
 }

@@ -36,6 +36,7 @@ void updateDesiredStateOfBoard1();
 void updateDesiredStateOfLightColumn();
 void updateDesiredStateOfStepMotor();
 void updateDesiredStateOfTriac();
+void updateDesiredStateOfCanCommunication();
 void setPhysicalOutputs();
 
 // public function
@@ -65,6 +66,7 @@ void service_applicationOutputHandler_update() {
     updateDesiredStateOfLightColumn();
     updateDesiredStateOfStepMotor();
     updateDesiredStateOfTriac();
+    updateDesiredStateOfCanCommunication();
     
     setPhysicalOutputs();
     // please refer to the connection table and schematic in the documentation for further info on physical connections
@@ -106,6 +108,10 @@ void updateDesiredStateOfStepMotor() {
 
 void updateDesiredStateOfTriac() {
     service_bitOperation_setBit(&triacState, service_applicationOutputHandler_data.triac, 0);
+}
+
+void updateDesiredStateOfCanCommunication() {
+    service_can_transmitting_update();
 }
 
 void setPhysicalOutputs() {
