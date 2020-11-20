@@ -148,17 +148,23 @@ void Error_Handler(void);
 
 //Dépendances logicielles:
 #define FREQUENCE_DE_LA_BASE_DE_TEMPS_EN_HZ 2000.0
-#define TEMPS_ECOULE_EN_MS_ENTRE_CHAQUE_INTERRUPTION (short)(1000.0/FREQUENCE_DE_LA_BASE_DE_TEMPS_EN_HZ)
+#define TEMPS_ECOULE_EN_MS_ENTRE_CHAQUE_INTERRUPTION (1000.0/FREQUENCE_DE_LA_BASE_DE_TEMPS_EN_HZ)
 #define PILOTETIMER1MODE2_TAUX_DE_BITS 19200.0
 #define PILOTETIMER6UP_COMPTE_MAXIMAL  (\
   (unsigned int)((FREQUENCE_D_OSCILLATEUR_EN_KHZ \
   /FREQUENCE_DE_LA_BASE_DE_TEMPS_EN_HZ * 1000.0)-1.0))
 
-#define PILOTECAN1_IDENTIFICATION_EN_TRANSMISSION (0x002)
-#define PILOTECAN1_IDENTIFICATION_EN_RECEPTION (0x001)
-#define PILOTECAN1_MASQUE_11_BITS_EN_RECEPTION  (0x0) //0x000
+// here's a bunch of wild guesses
+#define PILOTECAN1_IDENTIFICATION_EN_TRANSMISSION (0x001) // ??? not sure
+#define PILOTECAN1_IDENTIFICATION_EN_RECEPTION (0x000) /// ??? not sure
+#define PILOTECAN1_MASQUE_11_BITS_EN_RECEPTION  (0x000) //0x000 that's for sure
 
-#define SERVICE_CAN_POSTE_DE_COMMANDE_ID (0x000) // ??????? C'est quoi la vraie valeur plz
+// here's a bunch of wild guesses too!
+#define SERVICE_CAN_POSTE_DE_COMMANDE_ID (0x00) // ??????? C'est quoi la vraie valeur plz
+#define SERVICE_CAN_CENTRE_DE_TRI_ID (0x01) // ??????? C'est quoi la vraie valeur plz
+#define SERVICE_CAN_CENTRE_DES_TRANSPORT_ID (0x02) // ??????? C'est quoi la vraie valeur plz
+#define SERVICE_CAN_CENTRE_DE_PESAGE_ID (0x03) // ??????? C'est quoi la vraie valeur plz
+#define SERVICE_CAN_NO_RECEPTION_ID (0xff) // ??????? C'est quoi la vraie valeur plz
 #define SERVICE_CAN_TRAME_BYTELENGTH 2
 
 // base de temps
