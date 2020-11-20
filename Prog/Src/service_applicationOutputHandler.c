@@ -6,6 +6,7 @@
 #include "service_applicationOutputHandler.h"
 #include "main.h"
 #include "serviceBaseDeTemps.h"
+#include "service_can.h"
 #include "service_bitOperation.h"
 #include "interface_pcf8574A.h"
 #include "interface_mcp3021.h"

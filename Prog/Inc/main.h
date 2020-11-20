@@ -159,6 +159,7 @@ void Error_Handler(void);
 #define PILOTECAN1_MASQUE_11_BITS_EN_RECEPTION  (0x0) //0x000
 
 #define SERVICE_CAN_POSTE_DE_COMMANDE_ID (0x000) // ??????? C'est quoi la vraie valeur plz
+#define SERVICE_CAN_TRAME_BYTELENGTH 2
 
 // base de temps
 #define SERVICEBASEDETEMPS_NOMBRE_DE_PHASES 3

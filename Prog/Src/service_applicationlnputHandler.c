@@ -6,6 +6,7 @@
 #include "service_applicationlnputHandler.h"
 #include "main.h"
 #include "serviceBaseDeTemps.h"
+#include "service_can.h"
 #include "service_bitOperation.h"
 #include "interface_pcf8574A.h"
 #include "interface_mcp3021.h"
@@ -16,7 +17,6 @@ unsigned char valueOfInputBoard1;
 unsigned char valueOfInputBoard2;
 unsigned char valueOfPassageParZero;
 unsigned char valueOfAdc;
-unsigned char elapsedTimeInMsFromMasterSync;
 
 extern service_applicationInputHandler_Data service_applicationInputHandler_data;
 
@@ -26,6 +26,7 @@ void updateKnowledgeOfBoard1();
 void updateKnowledgeOfBoard2();
 void updateKnowledgeOfTriac();
 void updateKnowledgeOfAdc();
+void updateKnowledgeOfCan();
 
 void service_applicationInputHandler_init() {
     valueOfInputBoard0 = 0;
@@ -33,7 +34,6 @@ void service_applicationInputHandler_init() {
     valueOfInputBoard2 = 0;
     valueOfPassageParZero = 0;
     valueOfAdc = 0;
-    elapsedTimeInMsFromMasterSync = 0;
     serviceBaseDeTemps_execute[SERVICEBASEDETEMPS_PHASE_UPDATE_APP_INPUTS]
         = service_applicationInputHandler_update;
 }

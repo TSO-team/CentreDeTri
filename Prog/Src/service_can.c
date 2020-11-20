@@ -10,18 +10,17 @@
 float elapsedTimeInMsFromMasterSync;
 unsigned char isDataSent;
 
-extern service_can_LabeledData dataReceivedFromCanForPosteDeCommande;
-extern service_can_LabeledData dataToSendFromCanForCentreDeTri;
-extern service_can_LabeledData dataReceivedFromCanForCentreDesTransports;
-extern service_can_LabeledData dataReceivedFromCanForCentreDePesage;
+service_can_LabeledData dataReceivedFromCanForPosteDeCommande = {0, 0, 0, 0, 0, 0};
+service_can_LabeledData dataToSendFromCanForCentreDeTri = {0, 0, 0, 0, 0, 0};
+service_can_LabeledData dataReceivedFromCanForCentreDesTransports = {0, 0, 0, 0, 0, 0};
+service_can_LabeledData dataReceivedFromCanForCentreDePesage = {0, 0, 0, 0, 0, 0};
+
+void service_can_read(service_can_LabeledData* labeledData);
+void service_can_write(service_can_Trame* dataToSend);
 
 void service_can_init() {
     elapsedTimeInMsFromMasterSync = 0;
     isDataSent = 1;
-    
-    dataReceivedFromCanForPosteDeCommande = {0, 0};
-    dataReceivedFromCanForCentreDesTransports = {0, 0};
-    dataReceivedFromCanForCentreDePesage = {0, 0};
 }
 
 void service_can_receiving_update() {
@@ -55,13 +54,13 @@ void service_can_transmitting_update() {
 
 void service_can_read(service_can_LabeledData* labeledData) {
     if(piloteCAN1_messageDisponible()) {
-        piloteCAN1_litUnMessageRecu(&(*labeledData).data, &(*labeledData).senderId);
+        piloteCAN1_litUnMessageRecu((unsigned char*)&(labeledData->data), &(labeledData->senderId));
     }
 }
 
 void service_can_write(service_can_Trame* dataToSend) {
     piloteCAN1_transmetDesDonnes(PILOTECAN1_MASQUE_11_BITS_EN_RECEPTION,
-                                 dataToSend,
+                                 (unsigned char*)dataToSend,
                                  SERVICE_CAN_TRAME_BYTELENGTH);
 }
 

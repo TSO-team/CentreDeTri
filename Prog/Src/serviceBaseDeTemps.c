@@ -18,12 +18,10 @@ void serviceBaseDeTemps_gere(void);
 
 //Definitions de fonctions privees:
 void serviceBaseDeTemps_gere(void) {
-    //updateGeneralInputs();
     for (unsigned char i = 0; i < SERVICEBASEDETEMPS_NOMBRE_DE_PHASES; i++)
     {
         serviceBaseDeTemps_execute[i]();
     }
-    //updateGeneralOutputs();
 }
     
 //Definitions de variables publiques:

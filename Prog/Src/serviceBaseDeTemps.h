@@ -1,6 +1,7 @@
 #ifndef SERVICEBASEDETEMPS_H
 #define SERVICEBASEDETEMPS_H
 
+#include "main.h"
 //MODULE: serviceBaseDeTemps
 //DESCRIPTION: pour mettre en place un service d'appels periodiques de fonctions
 //pointées par un tableau de pointeurs de fonctions. Le service met en place

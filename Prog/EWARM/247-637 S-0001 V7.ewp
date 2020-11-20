@@ -1042,6 +1042,15 @@
           </file>
         </group>
         <group>
+          <name>timer</name>
+          <file>
+            <name>$PROJ_DIR$\..\Src\piloteTimer6Up.c</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\piloteTimer6Up.h</name>
+          </file>
+        </group>
+        <group>
           <name>triac</name>
           <file>
             <name>$PROJ_DIR$\..\Src\driver_passingByZero.c</name>
@@ -1056,48 +1065,72 @@
             <name>$PROJ_DIR$\..\Src\driver_triac.h</name>
           </file>
         </group>
-        <file>
-          <name>$PROJ_DIR$\..\Src\piloteTimer6Up.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\Src\piloteTimer6Up.h</name>
-        </file>
       </group>
       <group>
         <name>interface</name>
-        <file>
-          <name>$PROJ_DIR$\..\Src\interface_lightColumn.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\Src\interface_lightColumn.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\Src\interface_mcp3021.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\Src\interface_mcp3021.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\Src\interface_pcf8574A.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\Src\interface_pcf8574A.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\Src\interface_stepperMotor.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\Src\interface_stepperMotor.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\Src\interface_triac.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\Src\interface_triac.h</name>
-        </file>
+        <group>
+          <name>carteIO</name>
+          <file>
+            <name>$PROJ_DIR$\..\Src\interface_mcp3021.c</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\interface_mcp3021.h</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\interface_pcf8574A.c</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\interface_pcf8574A.h</name>
+          </file>
+        </group>
+        <group>
+          <name>carteTriac</name>
+          <file>
+            <name>$PROJ_DIR$\..\Src\interface_stepperMotor.c</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\interface_stepperMotor.h</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\interface_triac.c</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\interface_triac.h</name>
+          </file>
+        </group>
+        <group>
+          <name>lightColumn</name>
+          <file>
+            <name>$PROJ_DIR$\..\Src\interface_lightColumn.c</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\interface_lightColumn.h</name>
+          </file>
+        </group>
       </group>
       <group>
         <name>process</name>
+        <group>
+          <name>modeActif</name>
+        </group>
+        <group>
+          <name>modeArret</name>
+        </group>
+        <group>
+          <name>modeAttente</name>
+        </group>
+        <group>
+          <name>modeErreur</name>
+        </group>
+        <group>
+          <name>modeTest</name>
+        </group>
+        <file>
+          <name>$PROJ_DIR$\..\Src\process_centreDeTri.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\Src\process_centreDeTri.h</name>
+        </file>
       </group>
       <group>
         <name>service</name>
@@ -1122,6 +1155,9 @@
         <group>
           <name>communication</name>
           <file>
+            <name>$PROJ_DIR$\..\Src\service_can.c</name>
+          </file>
+          <file>
             <name>$PROJ_DIR$\..\Src\service_can.h</name>
           </file>
         </group>
@@ -1132,6 +1168,48 @@
           </file>
           <file>
             <name>$PROJ_DIR$\..\Src\service_bitOperation.h</name>
+          </file>
+        </group>
+        <group>
+          <name>stateMachine</name>
+          <group>
+            <name>test</name>
+            <group>
+              <name>machine</name>
+              <file>
+                <name>$PROJ_DIR$\..\Src\service_stateMachineTest.c</name>
+              </file>
+              <file>
+                <name>$PROJ_DIR$\..\Src\service_stateMachineTest.h</name>
+              </file>
+            </group>
+            <group>
+              <name>state</name>
+              <group>
+                <name>off</name>
+                <file>
+                  <name>$PROJ_DIR$\..\Src\service_stateMachineTestOffState.c</name>
+                </file>
+                <file>
+                  <name>$PROJ_DIR$\..\Src\service_stateMachineTestOffState.h</name>
+                </file>
+              </group>
+              <group>
+                <name>on</name>
+                <file>
+                  <name>$PROJ_DIR$\..\Src\service_stateMachineTestOnState.c</name>
+                </file>
+                <file>
+                  <name>$PROJ_DIR$\..\Src\service_stateMachineTestOnState.h</name>
+                </file>
+              </group>
+            </group>
+          </group>
+          <file>
+            <name>$PROJ_DIR$\..\Src\service_stateMachine.c</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\service_stateMachine.h</name>
           </file>
         </group>
         <file>

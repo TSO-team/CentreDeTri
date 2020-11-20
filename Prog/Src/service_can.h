@@ -2,19 +2,13 @@
 
 // creator: Samuel Duclos
 // date: 2020-11-16
+// modifications: 2020-11-19, John-William Lebel, ajout de l'addresse de l'envoyeur en can dans une nested structure
 
 #ifndef SERVICE_CAN_H
 #define SERVICE_CAN_H
 
-#define SERVICE_CAN_TRAME_BYTELENGTH 2;
-
 void service_can_receiving_update();
 void service_can_transmitting_update();
-
-service_can_LabeledData dataReceivedFromCanForPosteDeCommande;
-service_can_LabeledData dataToSendFromCanForCentreDeTri;
-service_can_LabeledData dataReceivedFromCanForCentreDesTransports;
-service_can_LabeledData dataReceivedFromCanForCentreDePesage;
 
 typedef enum {
     OFF,
@@ -47,17 +41,22 @@ typedef enum {
 } service_can_MassUnit;
 
 typedef struct {
-    unsigned int mode : 3,
-    color : 2,
-    position : 2,
-    unit : 1,
-    weight : 8;
+    unsigned int mode: 3,
+    color: 2,
+    position: 2,
+    unit: 1,
+    weight: 8;
 } service_can_Trame;
 
 typedef struct {
     service_can_Trame data;
     unsigned char senderId;
 } service_can_LabeledData;
+
+extern service_can_LabeledData dataReceivedFromCanForPosteDeCommande;
+extern service_can_LabeledData dataToSendFromCanForCentreDeTri;
+extern service_can_LabeledData dataReceivedFromCanForCentreDesTransports;
+extern service_can_LabeledData dataReceivedFromCanForCentreDePesage;
 
 #endif
  
