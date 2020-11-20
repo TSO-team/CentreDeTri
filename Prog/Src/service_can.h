@@ -7,8 +7,8 @@
 #ifndef SERVICE_CAN_H
 #define SERVICE_CAN_H
 
-void service_can_receiving_update();
-void service_can_transmitting_update();
+void service_can_receivingUpdate();
+void service_can_transmittingUpdate();
 
 typedef enum {
     OFF,

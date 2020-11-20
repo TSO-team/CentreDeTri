@@ -95,5 +95,5 @@ void updateKnowledgeOfAdc() {
 }
 
 void updateKnowledgeOfCan() {
-    service_can_receiving_update();
+    service_can_receivingUpdate();
 }

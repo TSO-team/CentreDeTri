@@ -112,7 +112,7 @@ void updateDesiredStateOfTriac() {
 }
 
 void updateDesiredStateOfCanCommunication() {
-    service_can_transmitting_update();
+    service_can_transmittingUpdate();
 }
 
 void setPhysicalOutputs() {

@@ -24,7 +24,8 @@ void service_can_init() {
     isDataSent = 1;
 }
 
-void service_can_receiving_update() {
+//* pour John et Phil
+void service_can_receivingUpdate() {
     // get can data in a temp variable (I know this is ugly, but it should work).
     // make sure to set the senderId variable to an invalide id beforehand so
     // we can know if we received anything or not
@@ -70,8 +71,59 @@ void service_can_receiving_update() {
         }
     }
 }
+//*/
 
-void service_can_transmitting_update() {
+// pour claude
+/*
+void service_can_receivingUpdate() {
+    // get can data in a temp variable (I know this is ugly, but it should work).
+    // make sure to set the senderId variable to an invalide id beforehand so
+    // we can know if we received anything or not
+    service_can_LabeledData tempLabeledData = {0, 0, 0, 0, 0, SERVICE_CAN_NO_RECEPTION_ID};
+    service_can_read(&tempLabeledData);
+    
+    // we enter this if section if we are less than 80ms from
+    // the "poste de commande" sync time
+    if(elapsedTimeInMsFromMasterSync < 80) {
+        // update the time counter
+        elapsedTimeInMsFromMasterSync += TEMPS_ECOULE_EN_MS_ENTRE_CHAQUE_INTERRUPTION;
+        
+        // save 2 ifs!
+        // this is worth doing because a lot of times when we're ready to gather
+        // can data, no station sent anything yet. Ah, saving precious cycles...
+        if(tempLabeledData.senderId == SERVICE_CAN_NO_RECEPTION_ID) {
+            return;
+        }
+        // centre de tri sent?
+        else if(tempLabeledData.senderId == SERVICE_CAN_CENTRE_DE_TRI_ID) {
+            // map the data
+            transferLabeledData(&tempLabeledData,
+                                &dataToSendFromCanForCentreDeTri);
+        }
+        // centre de pesage sent?
+        else if(tempLabeledData.senderId == SERVICE_CAN_CENTRE_DE_PESAGE_ID) {
+            // map the data
+            transferLabeledData(&tempLabeledData,
+                                &dataReceivedFromCanForCentreDePesage);
+        }
+    }
+    else {
+        // wait for "poste de commande" to send data so we can sync
+        if(tempLabeledData.senderId == SERVICE_CAN_POSTE_DE_COMMANDE_ID) {
+            transferLabeledData(&tempLabeledData,
+                                &dataReceivedFromCanForPosteDeCommande);
+          
+            // reset the counter
+            elapsedTimeInMsFromMasterSync = 0;
+            
+            // enable sending on can port
+            isDataSent = 0;
+        }
+    }
+}
+*/
+
+void service_can_transmittingUpdate() {
     if(elapsedTimeInMsFromMasterSync >= 20) {
         if(!isDataSent) {
             service_can_write(&dataToSendFromCanForCentreDeTri.data);
