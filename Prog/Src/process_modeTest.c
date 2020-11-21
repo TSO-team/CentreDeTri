@@ -6,29 +6,10 @@
 // inclusions
 #include "process_modeTest.h"
 
-#include "process_centreDeTri.h"
-
 #include "service_stateMachine.h"
+#include "process_centreDeTri.h"
 #include "service_applicationlnputHandler.h"
 #include "service_can.h"
-
-// state struct initialization
-service_stateMachine_State process_modeTest_state = {process_modeTest_behaviour,
-                                                     process_modeTest_actions,
-                                                     PROCESS_MODETEST_AMOUNT_OF_ACTIONS};
-// action array initialization
-unsigned int (*process_modeTest_actions[PROCESS_MODETEST_AMOUNT_OF_ACTIONS])(void);
-
-
-// init
-void process_modeTest_init() {
-    // actions
-    process_modeTest_actions[PROCESS_MODETEST_RED_BUTTON_PRESSED_ACTION] = process_modeTest_redButtonPressed;
-    process_modeTest_actions[PROCESS_MODETEST_ERROR_ACTION] = process_modeTest_error;
-    
-    // state
-    process_centreDeTri_states[PROCESS_CENTREDETRI_MODETEST_STATE] = process_modeTest_state;
-}
 
 // behaviour
 void process_modeTest_behaviour() {
@@ -50,6 +31,7 @@ unsigned int process_modeTest_redButtonPressed() {
     
     return process_centreDeTri_stateMachine.currentStateIndex;
 }
+
 unsigned int process_modeTest_error() {
     unsigned char errorOccurence = 0;
     
@@ -58,4 +40,17 @@ unsigned int process_modeTest_error() {
     }
     
     return process_centreDeTri_stateMachine.currentStateIndex;
+}
+
+// init
+void process_modeTest_init() {
+    // hardcore state init!
+    process_centreDeTri_states[PROCESS_CENTREDETRI_MODETEST_STATE] = (service_stateMachine_State) {
+        process_modeTest_behaviour,
+        (unsigned int(*[])(void)) {
+            process_modeTest_redButtonPressed,
+            process_modeTest_error
+        },
+        PROCESS_MODETEST_AMOUNT_OF_ACTIONS
+    };
 }

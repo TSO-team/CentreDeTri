@@ -6,30 +6,10 @@
 // inclusions
 #include "process_modeAttente.h"
 
+#include "service_stateMachine.h"
 #include "process_centreDeTri.h"
 #include "service_applicationlnputHandler.h"
 #include "service_can.h"
-
-// state struct initialization
-service_stateMachine_State process_modeAttente_state = {process_modeAttente_behaviour,
-                                                  process_modeAttente_actions,
-                                                  PROCESS_MODEATTENTE_AMOUNT_OF_ACTIONS};
-// transition array initialization
-unsigned int (*process_modeAttente_actions[PROCESS_MODEATTENTE_AMOUNT_OF_ACTIONS])(void);
-
-
-
-// init
-void process_modeAttente_init() {
-    // actions
-    process_modeAttente_actions[PROCESS_MODEATTENTE_GREEN_BUTTON_PRESSED_ACTION] = process_modeAttente_greenButtonPressed;
-    process_modeAttente_actions[PROCESS_MODEATTENTE_RED_BUTTON_PRESSED_ACTION] = process_modeAttente_redButtonPressed;
-    process_modeAttente_actions[PROCESS_MODEATTENTE_BLUE_BUTTON_PRESSED_ACTION] = process_modeAttente_blueButtonPressed;
-    process_modeAttente_actions[PROCESS_MODEATTENTE_ERROR_ACTION] = process_modeAttente_error;
-    
-    // state
-    process_centreDeTri_states[PROCESS_CENTREDETRI_MODEATTENTE_STATE] = process_modeAttente_state;
-}
 
 // state behaviour
 void process_modeAttente_behaviour() {
@@ -90,4 +70,18 @@ unsigned int process_modeAttente_error() {
     }
     
     return process_centreDeTri_stateMachine.currentStateIndex;
+}
+
+// init
+void process_modeAttente_init() {
+    process_centreDeTri_states[PROCESS_CENTREDETRI_MODEATTENTE_STATE] = (service_stateMachine_State) {
+        process_modeAttente_behaviour,
+        (unsigned int(*[])(void)) {
+            process_modeAttente_greenButtonPressed,
+            process_modeAttente_redButtonPressed,
+            process_modeAttente_blueButtonPressed,
+            process_modeAttente_error
+        },
+        PROCESS_MODEATTENTE_AMOUNT_OF_ACTIONS
+    };
 }

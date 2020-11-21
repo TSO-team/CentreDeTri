@@ -6,27 +6,10 @@
 // inclusions
 #include "process_modeInit.h"
 
+#include "service_stateMachine.h"
 #include "process_centreDeTri.h"
 #include "service_applicationlnputHandler.h"
 #include "service_can.h"
-
-// state struct initialization
-service_stateMachine_State process_modeInit_state = {process_modeInit_behaviour,
-                                                process_modeInit_actions,
-                                                PROCESS_MODEINIT_AMOUNT_OF_ACTIONS};
-// action array initialization
-unsigned int (*process_modeInit_actions[PROCESS_MODEINIT_AMOUNT_OF_ACTIONS])(void);
-
-
-
-// init
-void process_modeInit_init() {
-    // actions
-    process_modeInit_actions[PROCESS_MODEINIT_GO_TO_MODE_ATTENTE_ACTION] = process_modeInit_goToModeAttente;
-    
-    // state
-    process_centreDeTri_states[PROCESS_CENTREDETRI_MODEINIT_STATE] = process_modeInit_state;
-}
 
 // behaviour
 void process_modeInit_behaviour() {
@@ -46,3 +29,13 @@ unsigned int process_modeInit_goToModeAttente() {
     return PROCESS_CENTREDETRI_MODEATTENTE_STATE;
 }
 
+// init
+void process_modeInit_init() {
+    process_centreDeTri_states[PROCESS_CENTREDETRI_MODEINIT_STATE] = (service_stateMachine_State) {
+        process_modeInit_behaviour,
+        (unsigned int(*[])(void)) {
+            process_modeInit_goToModeAttente
+        },
+        PROCESS_MODEINIT_AMOUNT_OF_ACTIONS
+    };
+}

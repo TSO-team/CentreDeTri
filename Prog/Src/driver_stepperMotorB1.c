@@ -11,6 +11,6 @@ void driver_stepperMotorB1_init() {
 }
 
 void driver_stepperMotorB1_set(unsigned char outputBit) {
-    HAL_GPIO_WritePin(stepMotorB1_GPIO_Port, stepMotorB1_Pin, (GPIO_PinState) outputBit);
+    HAL_GPIO_WritePin(stepMotorB1_GPIO_Port, stepMotorB1_Pin, (GPIO_PinState) ~outputBit);
 }
 

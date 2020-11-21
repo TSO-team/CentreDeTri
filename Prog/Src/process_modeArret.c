@@ -6,28 +6,10 @@
 // inclusions
 #include "process_modeArret.h"
 
+#include "service_stateMachine.h"
 #include "process_centreDeTri.h"
 #include "service_applicationlnputHandler.h"
 #include "service_can.h"
-
-// state struct initialization
-service_stateMachine_State process_modeArret_state = {process_modeArret_behaviour,
-                                                process_modeArret_actions,
-                                                PROCESS_MODEARRET_AMOUNT_OF_ACTIONS};
-// transition array initialization
-unsigned int (*process_modeArret_actions[PROCESS_MODEARRET_AMOUNT_OF_ACTIONS])(void);
-
-
-
-// init
-void process_modeArret_init() {
-    // actions
-    process_modeArret_actions[PROCESS_MODEARRET_GREEN_BUTTON_PRESSED_ACTION] = process_modeArret_greenButtonPressed;
-    process_modeArret_actions[PROCESS_MODEARRET_ERROR_ACTION] = process_modeArret_error;
-    
-    // state
-    process_centreDeTri_states[PROCESS_CENTREDETRI_MODEARRET_STATE] = process_modeArret_state;
-}
 
 // state behaviour
 void process_modeArret_behaviour() {
@@ -58,5 +40,17 @@ unsigned int process_modeArret_error() {
     }
     
     return process_centreDeTri_stateMachine.currentStateIndex;
+}
+
+// init
+void process_modeArret_init() {
+    process_centreDeTri_states[PROCESS_CENTREDETRI_MODEARRET_STATE] = (service_stateMachine_State) {
+        process_modeArret_behaviour,
+        (unsigned int(*[])(void)) {
+            process_modeArret_greenButtonPressed,
+            process_modeArret_error
+        },
+        PROCESS_MODEARRET_AMOUNT_OF_ACTIONS
+    };
 }
 

@@ -6,27 +6,10 @@
 // inclusions
 #include "process_modeErreur.h"
 
+#include "service_stateMachine.h"
 #include "process_centreDeTri.h"
 #include "service_applicationlnputHandler.h"
 #include "service_can.h"
-
-// state struct initialization
-service_stateMachine_State process_modeErreur_state = {process_modeErreur_behaviour,
-                                                 process_modeErreur_actions,
-                                                 PROCESS_MODEERREUR_AMOUNT_OF_ACTIONS};
-// action array initialization
-unsigned int (*process_modeErreur_actions[PROCESS_MODEERREUR_AMOUNT_OF_ACTIONS])(void);
-
-
-
-// init
-void process_modeErreur_init() {
-    // actions
-    process_modeErreur_actions[PROCESS_MODEERREUR_BLOCK_ACTION] = process_modeErreur_block;
-    
-    // state
-    process_centreDeTri_states[PROCESS_CENTREDETRI_MODEERREUR_STATE] = process_modeErreur_state;
-}
 
 // behaviour
 void process_modeErreur_behaviour() {
@@ -44,5 +27,16 @@ unsigned int process_modeErreur_block() {
     }
     
     return process_centreDeTri_stateMachine.currentStateIndex;
+}
+
+// init
+void process_modeErreur_init() {
+    process_centreDeTri_states[PROCESS_CENTREDETRI_MODEERREUR_STATE] = (service_stateMachine_State) {
+        process_modeErreur_behaviour,
+        (unsigned int(*[])(void)) {
+            process_modeErreur_block
+        },
+        PROCESS_MODEERREUR_AMOUNT_OF_ACTIONS
+    };
 }
 
