@@ -2,7 +2,7 @@
 
 <project>
   <fileVersion>2</fileVersion>
-  <fileChecksum>2819452885</fileChecksum>
+  <fileChecksum>119953833</fileChecksum>
   <configuration>
     <name>247-637 S-0001 V7</name>
     <outputs>
@@ -263,12 +263,20 @@
       <file>$PROJ_DIR$\..\Src\driver_i2c.h</file>
       <file>$PROJ_DIR$\startup_stm32f407xx.s</file>
       <file>$PROJ_DIR$\..\Src\driver_i2c.c</file>
+      <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\service_buttonUtils.o</file>
+      <file>$PROJ_DIR$\..\Src\service_buttonUtils.c</file>
+      <file>$PROJ_DIR$\..\Src\service_buttonUtils.h</file>
+      <file>$PROJ_DIR$\..\Src\process_modeArret.c</file>
+      <file>$PROJ_DIR$\..\Src\process_modeArret.h</file>
       <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\process_centreDeTri.pbi</file>
       <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\process_centreDeTri.o</file>
       <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\service_stateMachineTestOffState.o</file>
       <file>$PROJ_DIR$\..\Src\service_stateMachineTestOnState.c</file>
       <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\service_stateMachineTestOffState.pbi</file>
       <file>$PROJ_DIR$\..\Src\service_stateMachineTestOffState.c</file>
+      <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\process_modeAttente.pbi</file>
+      <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\process_modeAttente.o</file>
+      <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\process_modeActif.pbi</file>
       <file>$PROJ_DIR$\..\Src\process_centreDeTri.h</file>
       <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\service_stateMachine.pbi</file>
       <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\service_stateMachine.o</file>
@@ -277,8 +285,27 @@
       <file>$PROJ_DIR$\..\Src\service_stateMachine.h</file>
       <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\process_centreDeTri.__cstat.et</file>
       <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\service_stateMachine.__cstat.et</file>
+      <file>$PROJ_DIR$\..\Src\process_modeInit.c</file>
+      <file>$PROJ_DIR$\..\Src\process_modeInit.h</file>
+      <file>$PROJ_DIR$\..\Src\process_modeActif.h</file>
+      <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\process_modeActif.o</file>
+      <file>$PROJ_DIR$\..\Src\process_modeActif.c</file>
+      <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\process_modeErreur.pbi</file>
       <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\service_stateMachineTest.pbi</file>
       <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\service_stateMachineTest.o</file>
+      <file>$PROJ_DIR$\..\Src\process_modeAttente.c</file>
+      <file>$PROJ_DIR$\..\Src\process_modeAttente.h</file>
+      <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\process_modeInit.__cstat.et</file>
+      <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\process_modeArret.__cstat.et</file>
+      <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\service_buttonUtils.__cstat.et</file>
+      <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\process_modeAttente.__cstat.et</file>
+      <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\process_modeActif.__cstat.et</file>
+      <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\process_modeArret.o</file>
+      <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\process_modeArret.pbi</file>
+      <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\service_buttonUtils.pbi</file>
+      <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\process_modeInit.pbi</file>
+      <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\process_modeInit.o</file>
+      <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\process_modeErreur.__cstat.et</file>
       <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\service_stateMachineTestOffState.__cstat.et</file>
       <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\service_stateMachineTestOnState.__cstat.et</file>
       <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\service_stateMachineTest.__cstat.et</file>
@@ -286,6 +313,14 @@
       <file>$PROJ_DIR$\..\Src\service_stateMachineTest.h</file>
       <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\service_stateMachineTestOnState.o</file>
       <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\service_stateMachineTestOnState.pbi</file>
+      <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\process_modeErreur.o</file>
+      <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\process_modeTest.o</file>
+      <file>$PROJ_DIR$\..\Src\process_modeTest.h</file>
+      <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\process_modeTest.pbi</file>
+      <file>$PROJ_DIR$\..\Src\process_modeTest.c</file>
+      <file>$PROJ_DIR$\247-637 S-0001 V7\Obj\process_modeTest.__cstat.et</file>
+      <file>$PROJ_DIR$\..\Src\process_modeErreur.h</file>
+      <file>$PROJ_DIR$\..\Src\process_modeErreur.c</file>
       <file>$PROJ_DIR$\..\Src\service_stateMachineTestOnState.h</file>
       <file>$PROJ_DIR$\..\Src\service_stateMachineTestOffState.h</file>
     </outputs>
@@ -304,7 +339,7 @@
       <inputs>
         <tool>
           <name>ILINK</name>
-          <file> 73 24 175 17 23 62 83 65 67 26 27 185 35 153 1 75 160 121 173 258 94 176 59 129 265 272 259 278 12 126 162 138 184 158 135 133 127 164 131 171 70 137 106 108 120 117 157 154 151 145 174 159 82 60 89 76</file>
+          <file> 73 24 175 17 23 62 83 65 67 26 27 185 35 153 1 75 160 121 173 263 282 294 269 307 298 308 94 176 59 257 129 273 286 264 305 12 126 162 138 184 158 135 133 127 164 131 171 70 137 106 108 120 117 157 154 151 145 174 159 82 60 89 76</file>
         </tool>
       </inputs>
     </file>
@@ -570,11 +605,11 @@
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 0 8 22 40 31 54 221 53 134 179 223 200 48 142 186 183 19 9 217 206 209 32 141 44 43 165 38 7 172 46 177 144 51 143 13 37 16 21 205 163 130 147 5 122 156 132 14 58 74 39</file>
+          <file> 16 0 209 183 74 221 53 134 122 132 223 206 48 142 186 163 147 9 217 259 200 32 141 44 43 165 38 7 172 46 177 144 51 143 13 37 179 130 5 156 14 58 39 205 22 21 31 40 19 54 8</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 205 9 48 53 32 0 134 13 37 179 183 16 5 22 21 122 156 163 130 132 14 147 186 143 142 58 51 141 44 31 43 40 165 38 7 19 74 172 54 46 8 177 39 144 223 217 221 206 200 209</file>
+          <file> 205 9 48 53 32 0 134 13 37 179 183 16 5 22 21 122 156 163 130 132 14 147 186 143 142 58 51 141 44 31 43 40 165 38 7 19 74 172 54 46 8 177 39 144 223 217 221 259 206 200 209</file>
         </tool>
       </inputs>
     </file>
@@ -651,7 +686,7 @@
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 38 16 141 177 13 179 43 172 21 251 48 53 32 44 165 7 46 144 51 143 37 183 0 9 134 142 186 22 31 40 19 54 8 217 163 130 147 5 122 156 132 14 58 74 39</file>
+          <file> 48 165 51 16 53 32 46 37 44 7 144 143 21 251 141 43 38 172 177 13 179 183 0 9 134 142 186 22 31 40 19 54 8 217 163 130 147 5 122 156 132 14 58 74 39</file>
         </tool>
         <tool>
           <name>ICCARM</name>
@@ -705,7 +740,7 @@
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 0 201 53 134 179 221 22 31 40 54 8 223 200 48 142 186 183 19 9 217 206 210 209 32 141 44 43 165 38 7 172 46 177 144 51 143 13 37 16 21 211 163 130 147 5 122 156 132 14 58 74 39</file>
+          <file> 16 201 53 134 221 0 21 223 200 48 142 186 183 9 217 206 210 209 32 141 44 43 165 38 7 172 46 177 144 51 143 13 37 179 22 31 40 19 54 8 211 163 130 147 5 122 156 132 14 58 74 39</file>
         </tool>
         <tool>
           <name>ICCARM</name>
@@ -1000,10 +1035,6 @@
         </tool>
       </outputs>
       <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 134 0 48 16 183 251 142 186 21 190 223 53 32 141 44 43 165 38 7 172 46 177 144 51 143 13 37 179 22 31 40 19 54 8 9 163 130 147 5 122 156 132 14 58 74 39</file>
-        </tool>
         <tool>
           <name>ICCARM</name>
           <file> 9 48 53 32 0 134 13 37 179 183 16 5 22 21 122 156 163 130 132 14 147 186 143 142 58 51 141 44 31 43 40 165 38 7 19 74 172 54 46 8 177 39 144 190 251 223</file>
@@ -1542,29 +1573,83 @@
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Src\service_stateMachineTestOnState.c</name>
+      <name>$PROJ_DIR$\..\Src\service_buttonUtils.c</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 279</file>
+          <file> 296</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 278</file>
+          <file> 257</file>
         </tool>
         <tool>
           <name>__cstat</name>
-          <file> 274</file>
+          <file> 291</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 277 268</file>
+          <file> 53 39 134 130 0 5 179 58 48 142 186 156 14 183 9 32 141 44 43 165 38 7 172 46 177 144 51 143 13 37 163 147 122 16 132 74 259 22 21 31 40 19 54 8</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 277 268</file>
+          <file> 259 9 48 53 32 0 134 13 37 179 183 16 5 22 21 122 156 163 130 132 14 147 186 143 142 58 51 141 44 31 43 40 165 38 7 19 74 172 54 46 8 177 39 144</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Src\process_modeArret.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 295</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 294</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 290</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 276 205 271 217 261</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 261 276 271 205 217</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Src\service_stateMachineTestOnState.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 306</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 305</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 301</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 315 304 276</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 315 276 304</file>
         </tool>
       </inputs>
     </file>
@@ -1573,25 +1658,25 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 261</file>
+          <file> 266</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 259</file>
+          <file> 264</file>
         </tool>
         <tool>
           <name>__cstat</name>
-          <file> 273</file>
+          <file> 300</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 277 268</file>
+          <file> 316 304 276</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 277 268</file>
+          <file> 316 276 304</file>
         </tool>
       </inputs>
     </file>
@@ -1600,25 +1685,25 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 257</file>
+          <file> 262</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 258</file>
+          <file> 263</file>
         </tool>
         <tool>
           <name>__cstat</name>
-          <file> 269</file>
+          <file> 277</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 39 186 130 142 48 5 179 58 0 134 156 14 183 223 9 53 32 141 44 43 165 38 7 172 46 177 144 51 143 13 37 163 147 122 16 132 74 263 22 21 31 40 19 54 8</file>
+          <file> 16 276 44 144 309 7 143 280 48 53 32 165 46 51 37 21 223 281 141 43 38 172 177 13 179 183 0 9 288 261 313 134 142 186 22 31 40 19 54 8 271 163 130 147 5 122 156 132 14 58 74 39</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 263 223 9 48 53 32 0 134 13 37 179 183 16 5 22 21 122 156 163 130 132 14 147 186 143 142 58 51 141 44 31 43 40 165 38 7 19 74 172 54 46 8 177 39 144</file>
+          <file> 271 276 9 48 53 32 0 134 13 37 179 183 16 5 22 21 122 156 163 130 132 14 147 186 143 142 58 51 141 44 31 43 40 165 38 7 19 74 172 54 46 8 177 39 144 223 280 288 281 261 309 313</file>
         </tool>
       </inputs>
     </file>
@@ -1627,25 +1712,106 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 264</file>
+          <file> 272</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 265</file>
+          <file> 273</file>
         </tool>
         <tool>
           <name>__cstat</name>
-          <file> 270</file>
+          <file> 278</file>
         </tool>
       </outputs>
       <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 276</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 276</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Src\process_modeInit.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 297</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 298</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 289</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 276 205 271 217 280</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 280 276 271 205 217</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Src\process_modeActif.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 270</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 282</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 293</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 276 205 271 217 281</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 281 276 271 205 217</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Src\process_modeAttente.c</name>
+      <outputs>
         <tool>
           <name>BICOMP</name>
           <file> 268</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 268</file>
+          <file> 269</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 292</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 276 205 271 217 288</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 288 276 271 205 217</file>
         </tool>
       </inputs>
     </file>
@@ -1654,25 +1820,79 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 271</file>
+          <file> 285</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 272</file>
+          <file> 286</file>
         </tool>
         <tool>
           <name>__cstat</name>
-          <file> 275</file>
+          <file> 302</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 0 44 144 7 143 156 14 183 281 268 48 53 32 165 46 51 37 141 43 38 172 177 13 179 130 5 58 39 9 280 134 142 186 163 147 122 16 132 74 277 22 21 31 40 19 54 8</file>
+          <file> 44 132 144 122 7 143 316 276 48 53 32 165 46 51 37 183 16 0 74 141 43 38 172 177 13 179 163 147 9 315 134 142 186 130 5 156 14 58 39 304 22 21 31 40 19 54 8</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 277 268 9 48 53 32 0 134 13 37 179 183 16 5 22 21 122 156 163 130 132 14 147 186 143 142 58 51 141 44 31 43 40 165 38 7 19 74 172 54 46 8 177 39 144 280 281</file>
+          <file> 304 276 9 48 53 32 0 134 13 37 179 183 16 5 22 21 122 156 163 130 132 14 147 186 143 142 58 51 141 44 31 43 40 165 38 7 19 74 172 54 46 8 177 39 144 315 316</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Src\process_modeTest.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 310</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 308</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 312</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 217 276 271 205 309</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 309 276 271 205 217</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Src\process_modeErreur.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 284</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 307</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 299</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 276 205 271 217 313</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 313 276 271 205 217</file>
         </tool>
       </inputs>
     </file>

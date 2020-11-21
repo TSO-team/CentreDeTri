@@ -4,10 +4,14 @@
 // date: 2020-11-19
 
 // inclusions
-// this is an horrible comment plz help
-//#include "service_stateMachineTestOnState.h"
+#include "service_stateMachineTestOnState.h"
 
 #include "service_stateMachineTest.h"
+
+// state struct initialization
+service_stateMachine_State ledOn = {turnOnLed, stateTransitionsForOnState, AMOUNT_OF_STATE_TRANSITIONS_FOR_ON_STATE};
+// transition array initialization
+unsigned int (*stateTransitionsForOnState[AMOUNT_OF_STATE_TRANSITIONS_FOR_ON_STATE])(void);
 
 // state behaviour
 void turnOnLed() {

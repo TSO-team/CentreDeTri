@@ -1112,18 +1112,57 @@
         <name>process</name>
         <group>
           <name>modeActif</name>
+          <file>
+            <name>$PROJ_DIR$\..\Src\process_modeActif.c</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\process_modeActif.h</name>
+          </file>
         </group>
         <group>
           <name>modeArret</name>
+          <file>
+            <name>$PROJ_DIR$\..\Src\process_modeArret.c</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\process_modeArret.h</name>
+          </file>
         </group>
         <group>
           <name>modeAttente</name>
+          <file>
+            <name>$PROJ_DIR$\..\Src\process_modeAttente.c</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\process_modeAttente.h</name>
+          </file>
         </group>
         <group>
           <name>modeErreur</name>
+          <file>
+            <name>$PROJ_DIR$\..\Src\process_modeErreur.c</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\process_modeErreur.h</name>
+          </file>
+        </group>
+        <group>
+          <name>modeInit</name>
+          <file>
+            <name>$PROJ_DIR$\..\Src\process_modeInit.c</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\process_modeInit.h</name>
+          </file>
         </group>
         <group>
           <name>modeTest</name>
+          <file>
+            <name>$PROJ_DIR$\..\Src\process_modeTest.c</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\process_modeTest.h</name>
+          </file>
         </group>
         <file>
           <name>$PROJ_DIR$\..\Src\process_centreDeTri.c</name>
@@ -1150,6 +1189,15 @@
           </file>
           <file>
             <name>$PROJ_DIR$\..\Src\service_applicationOutputHandler.h</name>
+          </file>
+        </group>
+        <group>
+          <name>button</name>
+          <file>
+            <name>$PROJ_DIR$\..\Src\service_buttonUtils.c</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\service_buttonUtils.h</name>
           </file>
         </group>
         <group>
@@ -1211,6 +1259,9 @@
           <file>
             <name>$PROJ_DIR$\..\Src\service_stateMachine.h</name>
           </file>
+        </group>
+        <group>
+          <name>stepperMotor</name>
         </group>
         <file>
           <name>$PROJ_DIR$\..\Src\serviceBaseDeTemps.c</name>

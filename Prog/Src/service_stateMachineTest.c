@@ -14,16 +14,19 @@
 #include "service_stateMachineTestOffState.h"
 
 // private variables
-TransitionnableState transitionnableStates[AMOUNT_OF_STATES];
+service_stateMachine_State states[AMOUNT_OF_STATES];
 
 // public variables
-StateMachine stateMachine = {INITIAL_STATE_INDEX, transitionnableStates};
+service_stateMachine_StateMachine stateMachine = {INITIAL_STATE_INDEX, states};
 
 // public functions
 void service_stateMachineTest_init() {
+    // description state 1
+    states[LED_ON_STATE_INDEX] = ledOn;
     stateTransitionsForOnState[IS_ON_TIME_ELAPSED_TRANSITION_INDEX] = isOnTimeElapsed;
+    
+    // description state 2
+    states[LED_OFF_STATE_INDEX] = ledOff;
     stateTransitionsForOffState[IS_OFF_TIME_ELAPSED_TRANSITION_INDEX] = isOffTimeElapsed;
-    transitionnableStates[LED_ON_STATE_INDEX] = ledOn;
-    transitionnableStates[LED_OFF_STATE_INDEX] = ledOff;
 }
 

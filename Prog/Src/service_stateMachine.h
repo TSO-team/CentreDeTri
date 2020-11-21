@@ -1,22 +1,22 @@
 // service_stateMachine.h
 // 
-// creator: John-William Lebel
-// date: 2020-11-19
+// date: 2020-11-19, John-William Lebel, creation
+// date: 2020-11-21, John-William Lebel, changed the names of some elements for clarity
 
 #ifndef SERVICE_STATEMACHINE_H
 #define SERVICE_STATEMACHINE_H
 
 typedef struct {
-    void (*stateBehaviour)(void);
-    unsigned int (**stateTransitions)(void);
-    unsigned int amountOfTransitions;
-} TransitionnableState;
+    void (*behaviour)(void);
+    unsigned int (**actions)(void);
+    unsigned int amountOfActions;
+} service_stateMachine_State;
 
 typedef struct {
     unsigned int currentStateIndex;
-    TransitionnableState* transitionnableStates;
-} StateMachine;
+    service_stateMachine_State* states;
+} service_stateMachine_StateMachine;
 
-void update(StateMachine* stateMachine);
+void service_stateMachine_update(service_stateMachine_StateMachine* stateMachine);
 
 #endif

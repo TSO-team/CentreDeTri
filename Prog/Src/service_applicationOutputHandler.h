@@ -51,7 +51,7 @@ typedef struct {
     
 } service_applicationOutputHandler_Data;
 
-service_applicationOutputHandler_Data service_applicationOutputHandler_data;
+extern service_applicationOutputHandler_Data service_applicationOutputHandler_data;
 
 void service_applicationOutputHandler_init();
 void service_applicationOutputHandler_update();

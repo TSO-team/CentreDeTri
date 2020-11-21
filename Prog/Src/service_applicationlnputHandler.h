@@ -46,7 +46,7 @@ typedef struct {
     vide: 5;
 } service_applicationInputHandler_Data;
 
-service_applicationInputHandler_Data service_applicationInputHandler_data;
+extern service_applicationInputHandler_Data service_applicationInputHandler_data;
 
 void service_applicationInputHandler_init();
 void service_applicationInputHandler_update();

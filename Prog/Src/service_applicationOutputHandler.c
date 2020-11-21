@@ -30,7 +30,7 @@ unsigned char triacState;
 unsigned char previousTriacState;
 
 // data struct
-extern service_applicationOutputHandler_Data service_applicationOutputHandler_data;
+service_applicationOutputHandler_Data service_applicationOutputHandler_data;
 
 void updateDesiredStateOfBoard0();
 void updateDesiredStateOfBoard1();

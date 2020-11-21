@@ -13,14 +13,14 @@ CStepIntDis=_ 0
 LeaveTargetRunning=_ 0
 [DebugChecksum]
 Checksum=-430703421
-[Log file]
-LoggingEnabled=_ 0
-LogFile=_ ""
-Category=_ 0
 [Disassemble mode]
 mode=0
 [Breakpoints2]
 Count=0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
 [Aliases]
 Count=0
 SuppressDialog=0

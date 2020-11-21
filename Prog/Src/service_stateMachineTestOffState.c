@@ -4,10 +4,14 @@
 // date: 2020-11-19
 
 // inclusions
-// it works "without" this file but fnsdjfnslkfd;llf
-//#include "service_stateMachineTestOffState.h"
+#include "service_stateMachineTestOffState.h"
 
 #include "service_stateMachineTest.h"
+
+// state struct initialization
+service_stateMachine_State ledOff = {turnOffLed, stateTransitionsForOffState, AMOUNT_OF_STATE_TRANSITIONS_FOR_OFF_STATE};
+// transition array initialization
+unsigned int (*stateTransitionsForOffState[AMOUNT_OF_STATE_TRANSITIONS_FOR_OFF_STATE])(void);
 
 // state behaviour
 void turnOffLed() {

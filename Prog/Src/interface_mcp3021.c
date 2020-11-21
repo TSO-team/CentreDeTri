@@ -15,5 +15,5 @@ void interface_mcp3021_init() {
 unsigned char interface_mcp3021_readInputByte() {
     // read the adc
     const unsigned char* value = driver_i2c_readByteArray(MCP3021_CHIP_ADDRESS, 2);
-    return (value[0] << 4) | (value[1] >> 4);
+    return 255 - ((value[0] << 4) | (value[1] >> 4));
 }

@@ -2,13 +2,11 @@
 
 // creator: Samuel Duclos
 // date: 2020-11-16
-// modifications: 2020-11-19, John-William Lebel, ajout de l'addresse de l'envoyeur en can dans une nested structure
+// modifications: 2020-11-19, John-William Lebel, ajout de l'addresse de l'envoyeur en can dans une nested struct
+// date: 2020-11-21, John-William Lebel, changed the names of some elements for clarity, added the "UNDEFINED" mode as an option
 
 #ifndef SERVICE_CAN_H
 #define SERVICE_CAN_H
-
-void service_can_receivingUpdate();
-void service_can_transmittingUpdate();
 
 typedef enum {
     OFF,
@@ -18,7 +16,7 @@ typedef enum {
     ERROR0,
     ERROR1,
     ERROR2,
-    ERROR3
+    UNDEFINED
 } service_can_FunctionningMode; 
 
 typedef enum {
@@ -53,10 +51,15 @@ typedef struct {
     unsigned char senderId;
 } service_can_LabeledData;
 
-extern service_can_LabeledData dataReceivedFromCanForPosteDeCommande;
-extern service_can_LabeledData dataToSendFromCanForCentreDeTri;
-extern service_can_LabeledData dataReceivedFromCanForCentreDesTransports;
-extern service_can_LabeledData dataReceivedFromCanForCentreDePesage;
+extern service_can_LabeledData service_can_dataReceivedPosteDeCommande;
+extern service_can_LabeledData service_can_dataToSendCentreDeTri;
+extern service_can_LabeledData service_can_dataReceivedCentreDesTransports;
+extern service_can_LabeledData service_can_dataReceivedCentreDePesage;
+
+void service_can_init();
+void service_can_receivingUpdate();
+void service_can_transmittingUpdate();
+void service_can_queryData();
 
 #endif
  

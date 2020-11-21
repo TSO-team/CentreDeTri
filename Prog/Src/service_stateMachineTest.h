@@ -18,7 +18,7 @@
 #define INITIAL_STATE_INDEX LED_ON_STATE_INDEX
 
 // variables defined in the .c
-extern StateMachine stateMachine;
+extern service_stateMachine_StateMachine stateMachine;
 
 // public functions
 void service_stateMachineTest_init();

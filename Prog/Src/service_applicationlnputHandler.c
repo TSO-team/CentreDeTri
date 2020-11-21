@@ -8,6 +8,7 @@
 #include "serviceBaseDeTemps.h"
 #include "service_can.h"
 #include "service_bitOperation.h"
+#include "service_buttonUtils.h"
 #include "interface_pcf8574A.h"
 #include "interface_mcp3021.h"
 #include "interface_triac.h"
@@ -17,8 +18,10 @@ unsigned char valueOfInputBoard1;
 unsigned char valueOfInputBoard2;
 unsigned char valueOfPassageParZero;
 unsigned char valueOfAdc;
+service_buttonUtils_Button boutonDepartState;
+service_buttonUtils_Button boutonArretState;
 
-extern service_applicationInputHandler_Data service_applicationInputHandler_data;
+service_applicationInputHandler_Data service_applicationInputHandler_data;
 
 void gatherData();
 void updateKnowledgeOfBoard0();
@@ -34,6 +37,10 @@ void service_applicationInputHandler_init() {
     valueOfInputBoard2 = 0;
     valueOfPassageParZero = 0;
     valueOfAdc = 0;
+    
+    service_buttonUtils_init(&boutonDepartState);
+    service_buttonUtils_init(&boutonArretState);
+    
     serviceBaseDeTemps_execute[SERVICEBASEDETEMPS_PHASE_UPDATE_APP_INPUTS]
         = service_applicationInputHandler_update;
 }
@@ -63,8 +70,13 @@ void updateKnowledgeOfBoard0() {
     service_applicationInputHandler_data.poussoirMagasinBlocPositionSortie = service_bitOperation_isolateBit(valueOfInputBoard0, 1);
     service_applicationInputHandler_data.detecteurOptiqueTypeBloc = service_bitOperation_isolateBit(valueOfInputBoard0, 2);
     service_applicationInputHandler_data.detecteurOptiqueBlocChute = service_bitOperation_isolateBit(valueOfInputBoard0, 3);
-    service_applicationInputHandler_data.boutonDepart = service_bitOperation_isolateBit(valueOfInputBoard0, 4);
-    service_applicationInputHandler_data.boutonArret = service_bitOperation_isolateBit(valueOfInputBoard0, 5);
+    
+    service_buttonUtils_updateInternalValues(&boutonDepartState, service_bitOperation_isolateBit(valueOfInputBoard0, 4));
+    service_applicationInputHandler_data.boutonDepart = service_buttonUtils_clicked(&boutonDepartState);
+    
+    service_buttonUtils_updateInternalValues(&boutonArretState, service_bitOperation_isolateBit(valueOfInputBoard0, 5));
+    service_applicationInputHandler_data.boutonArret = service_buttonUtils_clicked(&boutonArretState);
+    
     service_applicationInputHandler_data.indicationPressionVentouse = service_bitOperation_isolateBit(valueOfInputBoard0, 6);
 }
 

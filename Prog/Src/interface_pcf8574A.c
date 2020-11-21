@@ -15,10 +15,10 @@ void interface_pcf8574A_init() {
 
 unsigned char interface_pcf8574A_readInputByte(unsigned char chipAddress) {
     // read GPIO
-    return driver_i2c_readByte(chipAddress);
+    return ~driver_i2c_readByte(chipAddress);
 }
 
 void interface_pcf8574A_writeOutputByte(unsigned char chipAddress, unsigned char outputByte) {
     // write GPIO
-    driver_i2c_writeByteNoRegister(chipAddress, outputByte);
+    driver_i2c_writeByteNoRegister(chipAddress, ~outputByte);
 }
