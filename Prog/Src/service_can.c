@@ -73,12 +73,14 @@ void service_can_receivingUpdate() {
 }
 
 void service_can_transmittingUpdate() {
-    if(elapsedTimeInMsFromMasterSync >= 20) {
-        if(!isDataSent) {
-            service_can_write(&service_can_dataToSendCentreDeTri.data);
-            isDataSent = 1;
-        }
+    if(elapsedTimeInMsFromMasterSync < 20) {
+        return;
     }
+    if(isDataSent) {
+        return;
+    }
+    service_can_write(&service_can_dataToSendCentreDeTri.data);
+    isDataSent = 1;
 }
 
 void service_can_read(service_can_LabeledData* labeledData) {

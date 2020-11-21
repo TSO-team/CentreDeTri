@@ -8,6 +8,8 @@
 #ifndef SERVICE_APPLICATIONOUTPUTHANDLER_H
 #define SERVICE_APPLICATIONOUTPUTHANDLER_H
 
+#include "service_stepperMotor.h"
+
 /* put this in main.h if you're using it and it's not there
 #define PCF8574A_CHIP_ADDRESS 0x7A
 */
@@ -52,6 +54,7 @@ typedef struct {
 } service_applicationOutputHandler_Data;
 
 extern service_applicationOutputHandler_Data service_applicationOutputHandler_data;
+extern service_stepperMotor_Stepper service_applicationOutputHandler_stepper;
 
 void service_applicationOutputHandler_init();
 void service_applicationOutputHandler_update();

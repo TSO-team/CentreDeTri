@@ -8,6 +8,7 @@
 #include "serviceBaseDeTemps.h"
 #include "service_can.h"
 #include "service_bitOperation.h"
+#include "service_stepperMotor.h"
 #include "interface_pcf8574A.h"
 #include "interface_mcp3021.h"
 #include "interface_lightColumn.h"
@@ -31,6 +32,7 @@ unsigned char previousTriacState;
 
 // data struct
 service_applicationOutputHandler_Data service_applicationOutputHandler_data;
+service_stepperMotor_Stepper service_applicationOutputHandler_stepper = {0, 0, 50, 0, interface_stepperMotor_writeOutputByte};
 
 void updateDesiredStateOfBoard0();
 void updateDesiredStateOfBoard1();
@@ -56,6 +58,8 @@ void service_applicationOutputHandler_init() {
     
     triacState = 0;
     previousTriacState = 0;
+    
+    service_stepperMotor_init(&service_applicationOutputHandler_stepper);
     
     serviceBaseDeTemps_execute[SERVICEBASEDETEMPS_PHASE_UPDATE_APP_OUTPUTS]
         = service_applicationOutputHandler_update;
@@ -135,10 +139,7 @@ void setPhysicalOutputs() {
     }
     
     // step motor
-    if(previousStepMotorState != stepMotorState) {
-        interface_stepperMotor_writeOutputByte(stepMotorState);
-        previousStepMotorState = stepMotorState;
-    }
+    service_stepperMotor_update(&service_applicationOutputHandler_stepper);
     
     // triac
     if(previousTriacState != triacState) {

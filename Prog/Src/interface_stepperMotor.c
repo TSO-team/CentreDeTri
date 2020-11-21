@@ -11,10 +11,10 @@
 #include "driver_stepperMotorB2.h"
 
 void interface_stepperMotor_init() {
-   driver_stepperMotorA1_set(0);
-   driver_stepperMotorA2_set(0);
-   driver_stepperMotorB1_set(0);
-   driver_stepperMotorB2_set(0);
+   driver_stepperMotorA1_init();
+   driver_stepperMotorA2_init();
+   driver_stepperMotorB1_init();
+   driver_stepperMotorB2_init();
 }
 
 void interface_stepperMotor_writeOutputByte(unsigned char byteValue) {

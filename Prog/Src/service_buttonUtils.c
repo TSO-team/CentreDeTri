@@ -16,7 +16,7 @@ void updateButtonIntegral(service_buttonUtils_Button* button, unsigned char rawB
 void clampButtonIntegral(service_buttonUtils_Button* button);
 
 // contructor (sort of?)
-void service_buttonUtils_initialise(service_buttonUtils_Button* button) {
+void service_buttonUtils_init(service_buttonUtils_Button* button) {
   button->unbouncedButtonValue = 0;
   button->previousUnbouncedButtonValue = 0;
   button->buttonIntegral = 0;

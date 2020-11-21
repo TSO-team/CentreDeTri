@@ -26,6 +26,8 @@
 //S-0010:
 //Historique: 
 // 2019-10-27, Yves Roy, creation
+// 2020-11-18, John-William Lebel, modification with CubeMX, removed files, added files, modified files
+// 2020-11-21, John-William Lebel, significant mods
 
 //notes sur l'utilisation des timers.
 // https://www.st.com/content/ccc/resource/technical/document/application_note/group0/91/01/84/3f/7c/67/41/3f/DM00236305/files/DM00236305.pdf/jcr:content/translations/en.DM00236305.pdf
@@ -38,7 +40,18 @@
 
 #include "piloteTimer6Up.h"
 #include "piloteCAN1.h"
+
+#include "interface_mcp3021.h"
+#include "interface_pcf8574A.h"
+#include "interface_lightColumn.h"
+#include "interface_stepperMotor.h"
+    
 #include "serviceBaseDeTemps.h"
+#include "service_can.h"
+#include "service_applicationInputHandler.h"
+#include "service_applicationOutputHandler.h"
+    
+#include "process_centreDeTri.h"
     
 /* USER CODE END Includes */
 
@@ -59,11 +72,8 @@
 
 /* Private variables ---------------------------------------------------------*/
 CAN_HandleTypeDef hcan1;
-
 I2C_HandleTypeDef hi2c1;
-
 TIM_HandleTypeDef htim6;
-
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
@@ -89,12 +99,24 @@ void main_initialiseApresLeHAL(void);
 void main_initialiseAvantLeHAL(void) {
     piloteTimer6Up_initialise();
     piloteCAN1_initialise();
+    
     serviceBaseDeTemps_initialise();
 }
 
 void main_initialiseApresLeHAL(void) {
   piloteCAN1_initialise();
   piloteTimer6Up_permetLesInterruptions();
+  
+  interface_mcp3021_init();
+  interface_pcf8574A_init();
+  interface_lightColumn_init();
+  interface_stepperMotor_init();
+  
+  service_can_init();
+  service_applicationInputHandler_init();
+  service_applicationOutputHandler_init();
+  
+  process_centreDeTri_init();
 }
 
 void neFaitRien(void) {}

@@ -1368,10 +1368,10 @@
         <group>
           <name>appInput</name>
           <file>
-            <name>$PROJ_DIR$\..\Src\service_applicationlnputHandler.c</name>
+            <name>$PROJ_DIR$\..\Src\service_applicationInputHandler.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\service_applicationlnputHandler.h</name>
+            <name>$PROJ_DIR$\..\Src\service_applicationInputHandler.h</name>
           </file>
         </group>
         <group>
@@ -1454,6 +1454,12 @@
         </group>
         <group>
           <name>stepperMotor</name>
+          <file>
+            <name>$PROJ_DIR$\..\Src\service_stepperMotor.c</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\service_stepperMotor.h</name>
+          </file>
         </group>
         <file>
           <name>$PROJ_DIR$\..\Src\serviceBaseDeTemps.c</name>
