@@ -24,8 +24,7 @@ unsigned int process_modeArret_greenButtonPressed() {
         return PROCESS_CENTREDETRI_MODEATTENTE_STATE;
     }
     // equivalent to pressing green button from can
-    if(service_can_dataReceivedPosteDeCommande.data.mode == ON) {
-        service_can_dataReceivedPosteDeCommande.data.mode = UNDEFINED;
+    if(service_can_dataReceivedPosteDeCommande.data.mode == WAIT) {
         return PROCESS_CENTREDETRI_MODEATTENTE_STATE;
     }
     

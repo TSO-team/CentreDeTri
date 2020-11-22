@@ -7,11 +7,20 @@
 #include "main.h"
 #include "serviceBaseDeTemps.h"
 #include "service_can.h"
+
 #include "service_bitOperation.h"
+
 #include "service_stepperMotor.h"
+#include "service_lightHandler.h"
+#include "service_triac.h"
+
 #include "interface_pcf8574A.h"
 #include "interface_mcp3021.h"
-#include "interface_lightColumn.h"
+
+#include "interface_greenLight.h"
+#include "interface_yellowLight.h"
+#include "interface_redLight.h"
+
 #include "interface_stepperMotor.h"
 #include "interface_triac.h"
 
@@ -32,14 +41,17 @@ unsigned char previousTriacState;
 
 // data struct
 service_applicationOutputHandler_Data service_applicationOutputHandler_data;
+
 service_stepperMotor_Stepper service_applicationOutputHandler_stepper = {0, 0, 50, 0, interface_stepperMotor_writeOutputByte};
+
+service_lightHandler_Light service_applicationOutputHandler_greenLight = {SERVICE_LIGHTHANDLER_OFF, 0, 500, 500, interface_greenLight_writeOutputByte};
+service_lightHandler_Light service_applicationOutputHandler_yellowLight = {SERVICE_LIGHTHANDLER_OFF, 0, 500, 500, interface_yellowLight_writeOutputByte};
+service_lightHandler_Light service_applicationOutputHandler_redLight = {SERVICE_LIGHTHANDLER_OFF, 0, 500, 500, interface_redLight_writeOutputByte};
+
+service_triac_Triac service_applicationOutputHandler_triac = {0.5, 0, interface_triac_writeTriacValue, interface_triac_isPassingByZero};
 
 void updateDesiredStateOfBoard0();
 void updateDesiredStateOfBoard1();
-void updateDesiredStateOfLightColumn();
-void updateDesiredStateOfStepMotor();
-void updateDesiredStateOfTriac();
-void updateDesiredStateOfCanCommunication();
 void setPhysicalOutputs();
 
 // public function
@@ -50,16 +62,20 @@ void service_applicationOutputHandler_init() {
     valueOfOutputBoard1 = 0;
     previousValueOfOutputBoard1 = 0;
     
-    valueOfLightColumn = 0;
-    previousValueOfLightColumn = 0;
+    // triac
+    service_triac_init(&service_applicationOutputHandler_triac);
     
-    stepMotorState = 0;
-    previousStepMotorState = 0;
-    
-    triacState = 0;
-    previousTriacState = 0;
-    
+    // stepper
     service_stepperMotor_init(&service_applicationOutputHandler_stepper);
+    
+    // lights
+    interface_greenLight_init();
+    interface_yellowLight_init();
+    interface_redLight_init();
+    service_lightHandler_init();
+    
+    // can
+    service_can_init();
     
     serviceBaseDeTemps_execute[SERVICEBASEDETEMPS_PHASE_UPDATE_APP_OUTPUTS]
         = service_applicationOutputHandler_update;
@@ -68,10 +84,6 @@ void service_applicationOutputHandler_init() {
 void service_applicationOutputHandler_update() {
     updateDesiredStateOfBoard0();
     updateDesiredStateOfBoard1();
-    updateDesiredStateOfLightColumn();
-    updateDesiredStateOfStepMotor();
-    updateDesiredStateOfTriac();
-    updateDesiredStateOfCanCommunication();
     
     setPhysicalOutputs();
     // please refer to the connection table and schematic in the documentation for further info on physical connections
@@ -98,27 +110,6 @@ void updateDesiredStateOfBoard1() {
     service_bitOperation_setBit(&valueOfOutputBoard1, service_applicationOutputHandler_data.hasPositionProcessStarted, 6);
 }
 
-void updateDesiredStateOfLightColumn() {
-    service_bitOperation_setBit(&valueOfLightColumn, service_applicationOutputHandler_data.greenLightInColumn, 0);
-    service_bitOperation_setBit(&valueOfLightColumn, service_applicationOutputHandler_data.yellowLightInColumn, 1);
-    service_bitOperation_setBit(&valueOfLightColumn, service_applicationOutputHandler_data.redLightInColumn, 2);
-}
-
-void updateDesiredStateOfStepMotor() {
-    service_bitOperation_setBit(&stepMotorState, service_applicationOutputHandler_data.stepMotorA1, 0);
-    service_bitOperation_setBit(&stepMotorState, service_applicationOutputHandler_data.stepMotorA2, 1);
-    service_bitOperation_setBit(&stepMotorState, service_applicationOutputHandler_data.stepMotorB1, 2);
-    service_bitOperation_setBit(&stepMotorState, service_applicationOutputHandler_data.stepMotorB2, 3);
-}
-
-void updateDesiredStateOfTriac() {
-    service_bitOperation_setBit(&triacState, service_applicationOutputHandler_data.triac, 0);
-}
-
-void updateDesiredStateOfCanCommunication() {
-    service_can_transmittingUpdate();
-}
-
 void setPhysicalOutputs() {
     // pcf #0
     if(previousValueOfOutputBoard0 != valueOfOutputBoard0) {
@@ -133,17 +124,16 @@ void setPhysicalOutputs() {
     }
     
     // light column
-    if(previousValueOfLightColumn != valueOfLightColumn) {
-        interface_lightColumn_writeOutputByte(valueOfLightColumn);
-        previousValueOfLightColumn = valueOfLightColumn;
-    }
+    service_lightHandler_update(&service_applicationOutputHandler_greenLight);
+    service_lightHandler_update(&service_applicationOutputHandler_yellowLight);
+    service_lightHandler_update(&service_applicationOutputHandler_redLight);
     
     // step motor
     service_stepperMotor_update(&service_applicationOutputHandler_stepper);
     
     // triac
-    if(previousTriacState != triacState) {
-        interface_triac_writeTriacValue(triacState);
-        previousTriacState = triacState;
-    }
+    service_triac_update(&service_applicationOutputHandler_triac);
+    
+    // can
+    service_can_transmittingUpdate();
 }

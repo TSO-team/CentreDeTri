@@ -16,7 +16,7 @@ typedef enum {
     ERROR0,
     ERROR1,
     ERROR2,
-    UNDEFINED
+    ERROR3,
 } service_can_FunctionningMode; 
 
 typedef enum {

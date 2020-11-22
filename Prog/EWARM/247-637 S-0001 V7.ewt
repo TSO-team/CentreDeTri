@@ -1207,6 +1207,15 @@
           </file>
         </group>
         <group>
+          <name>onBoardButton</name>
+          <file>
+            <name>$PROJ_DIR$\..\Src\driver_testButton.c</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\driver_testButton.h</name>
+          </file>
+        </group>
+        <group>
           <name>stepperMotor</name>
           <file>
             <name>$PROJ_DIR$\..\Src\driver_stepperMotorA1.c</name>
@@ -1293,10 +1302,22 @@
         <group>
           <name>lightColumn</name>
           <file>
-            <name>$PROJ_DIR$\..\Src\interface_lightColumn.c</name>
+            <name>$PROJ_DIR$\..\Src\interface_greenLight.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\interface_lightColumn.h</name>
+            <name>$PROJ_DIR$\..\Src\interface_greenLight.h</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\interface_redLight.c</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\interface_redLight.h</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\interface_yellowLight.c</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\interface_yellowLight.h</name>
           </file>
         </group>
       </group>
@@ -1402,6 +1423,42 @@
           </file>
         </group>
         <group>
+          <name>lightHandling</name>
+          <group>
+            <name>state</name>
+            <file>
+              <name>$PROJ_DIR$\..\Src\service_lightHandlerBlinkOff.c</name>
+            </file>
+            <file>
+              <name>$PROJ_DIR$\..\Src\service_lightHandlerBlinkOff.h</name>
+            </file>
+            <file>
+              <name>$PROJ_DIR$\..\Src\service_lightHandlerBlinkOn.c</name>
+            </file>
+            <file>
+              <name>$PROJ_DIR$\..\Src\service_lightHandlerBlinkOn.h</name>
+            </file>
+            <file>
+              <name>$PROJ_DIR$\..\Src\service_lightHandlerOff.c</name>
+            </file>
+            <file>
+              <name>$PROJ_DIR$\..\Src\service_lightHandlerOff.h</name>
+            </file>
+            <file>
+              <name>$PROJ_DIR$\..\Src\service_lightHandlerOn.c</name>
+            </file>
+            <file>
+              <name>$PROJ_DIR$\..\Src\service_lightHandlerOn.h</name>
+            </file>
+          </group>
+          <file>
+            <name>$PROJ_DIR$\..\Src\service_lightHandler.c</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\service_lightHandler.h</name>
+          </file>
+        </group>
+        <group>
           <name>math</name>
           <file>
             <name>$PROJ_DIR$\..\Src\service_bitOperation.c</name>
@@ -1459,6 +1516,15 @@
           </file>
           <file>
             <name>$PROJ_DIR$\..\Src\service_stepperMotor.h</name>
+          </file>
+        </group>
+        <group>
+          <name>triac</name>
+          <file>
+            <name>$PROJ_DIR$\..\Src\service_triac.c</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\service_triac.h</name>
           </file>
         </group>
         <file>

@@ -20,6 +20,9 @@ typedef struct {
     boutonArret: 1,
     indicationPressionVentouse: 1,
     
+    // 1 bit
+    boutonTest: 1,
+    
     // 8 bits
     cylindreVentouseHaut: 1,
     cylindreVentouseBas: 1,
@@ -43,7 +46,7 @@ typedef struct {
     detecteurHauteurBloc: 8,
     
     // unused bits
-    vide: 5;
+    vide: 4;
 } service_applicationInputHandler_Data;
 
 extern service_applicationInputHandler_Data service_applicationInputHandler_data;

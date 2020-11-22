@@ -5,14 +5,14 @@
 // creator: John-William Lebel
 // date: 2020-10-08
 
-#ifndef INTERFACE_LIGHTCOLUMN_H
-#define INTERFACE_LIGHTCOLUMN_H
+#ifndef INTERFACE_YELLOWLIGHT_H
+#define INTERFACE_YELLOWLIGHT_H
 
 /* put this in main.h if you're using it and it's not there
 #define PCF8574A_CHIP_ADDRESS 0x7A
 */
 
-void interface_lightColumn_init();
-void interface_lightColumn_writeOutputByte(unsigned char outputBit);
+void interface_yellowLight_init();
+void interface_yellowLight_writeOutputByte(unsigned char outputBit);
 
 #endif

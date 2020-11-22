@@ -25,7 +25,6 @@ unsigned int process_modeTest_redButtonPressed() {
     }
     // equivalent to pressing red button from can
     if(service_can_dataReceivedPosteDeCommande.data.mode == OFF) {
-        service_can_dataReceivedPosteDeCommande.data.mode = UNDEFINED;
         return PROCESS_CENTREDETRI_MODEARRET_STATE;
     }
     

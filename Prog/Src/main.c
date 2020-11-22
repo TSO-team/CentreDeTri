@@ -43,7 +43,6 @@
 
 #include "interface_mcp3021.h"
 #include "interface_pcf8574A.h"
-#include "interface_lightColumn.h"
 #include "interface_stepperMotor.h"
     
 #include "serviceBaseDeTemps.h"
@@ -72,8 +71,11 @@
 
 /* Private variables ---------------------------------------------------------*/
 CAN_HandleTypeDef hcan1;
+
 I2C_HandleTypeDef hi2c1;
+
 TIM_HandleTypeDef htim6;
+
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
@@ -109,7 +111,6 @@ void main_initialiseApresLeHAL(void) {
   
   interface_mcp3021_init();
   interface_pcf8574A_init();
-  interface_lightColumn_init();
   interface_stepperMotor_init();
   
   service_can_init();
@@ -415,11 +416,11 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Alternate = GPIO_AF5_SPI2;
   HAL_GPIO_Init(PDM_OUT_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : B1_Pin */
-  GPIO_InitStruct.Pin = B1_Pin;
+  /*Configure GPIO pin : testButton_Pin */
+  GPIO_InitStruct.Pin = testButton_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(testButton_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : stepMotorB2_Pin stepMotorA2_Pin stepMotorB1_Pin greenLightInColumn_Pin */
   GPIO_InitStruct.Pin = stepMotorB2_Pin|stepMotorA2_Pin|stepMotorB1_Pin|greenLightInColumn_Pin;

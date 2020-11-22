@@ -24,8 +24,8 @@ unsigned int process_modeAttente_greenButtonPressed() {
         return PROCESS_CENTREDETRI_MODEACTIF_STATE;
     }
     // equivalent to pressing green button from can
-    if(service_can_dataReceivedPosteDeCommande.data.mode == ON) {
-        service_can_dataReceivedPosteDeCommande.data.mode = UNDEFINED;
+    unsigned char canMode = service_can_dataReceivedPosteDeCommande.data.mode;
+    if(canMode == ON) {
         return PROCESS_CENTREDETRI_MODEACTIF_STATE;
     }
     
@@ -37,25 +37,25 @@ unsigned int process_modeAttente_redButtonPressed() {
     if(boutonArret) {
         return PROCESS_CENTREDETRI_MODEARRET_STATE;
     }
+    
     // equivalent to pressing red button from can
-    if(service_can_dataReceivedPosteDeCommande.data.mode == OFF) {
-        service_can_dataReceivedPosteDeCommande.data.mode = UNDEFINED;
+    unsigned char canMode = service_can_dataReceivedPosteDeCommande.data.mode;
+    if(canMode == OFF) {
         return PROCESS_CENTREDETRI_MODEARRET_STATE;
     }
     
     return process_centreDeTri_stateMachine.currentStateIndex;
 }
 
-// ????????
 unsigned int process_modeAttente_blueButtonPressed() {
-    unsigned char boutonTest = 0; // service_applicationInputHandler_data.boutonTest;
+    unsigned char boutonTest = service_applicationInputHandler_data.boutonTest;
     if(boutonTest) {
         return PROCESS_CENTREDETRI_MODETEST_STATE;
     }
     
     // equivalent to pressing blue button from can
-    if(service_can_dataReceivedPosteDeCommande.data.mode == TEST) {
-        service_can_dataReceivedPosteDeCommande.data.mode = UNDEFINED;
+    unsigned char canMode = service_can_dataReceivedPosteDeCommande.data.mode;
+    if(canMode == TEST) {
         return PROCESS_CENTREDETRI_MODETEST_STATE;
     }
     

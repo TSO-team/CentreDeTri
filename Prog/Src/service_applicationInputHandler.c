@@ -5,6 +5,7 @@
 
 #include "service_applicationInputHandler.h"
 #include "main.h"
+#include "driver_testButton.h"
 #include "serviceBaseDeTemps.h"
 #include "service_can.h"
 #include "service_bitOperation.h"
@@ -20,6 +21,7 @@ unsigned char valueOfPassageParZero;
 unsigned char valueOfAdc;
 service_buttonUtils_Button boutonDepartState;
 service_buttonUtils_Button boutonArretState;
+service_buttonUtils_Button boutonTestState;
 
 service_applicationInputHandler_Data service_applicationInputHandler_data;
 
@@ -40,6 +42,7 @@ void service_applicationInputHandler_init() {
     
     service_buttonUtils_init(&boutonDepartState);
     service_buttonUtils_init(&boutonArretState);
+    service_buttonUtils_init(&boutonTestState);
     
     serviceBaseDeTemps_execute[SERVICEBASEDETEMPS_PHASE_UPDATE_APP_INPUTS]
         = service_applicationInputHandler_update;
@@ -76,6 +79,9 @@ void updateKnowledgeOfBoard0() {
     
     service_buttonUtils_updateInternalValues(&boutonArretState, service_bitOperation_isolateBit(valueOfInputBoard0, 5));
     service_applicationInputHandler_data.boutonArret = service_buttonUtils_clicked(&boutonArretState);
+    
+    service_buttonUtils_updateInternalValues(&boutonTestState, driver_testButton_read());
+    service_applicationInputHandler_data.boutonTest = service_buttonUtils_clicked(&boutonTestState);
     
     service_applicationInputHandler_data.indicationPressionVentouse = service_bitOperation_isolateBit(valueOfInputBoard0, 6);
 }

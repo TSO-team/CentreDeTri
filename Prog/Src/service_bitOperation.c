@@ -11,10 +11,10 @@ unsigned char service_bitOperation_isolateBit(unsigned char sensorData, unsigned
 }
 
 void service_bitOperation_setBit(unsigned char* byteToSet, unsigned char bitValue, unsigned char bitSelector) {
-  if(bitValue) {
-      *byteToSet |= 1 << bitSelector;
-  }
-  else {
-      *byteToSet &= ~(1 << bitSelector);
-  }
+    if(bitValue) {
+        *byteToSet |= 1 << bitSelector;
+    }
+    else {
+        *byteToSet &= ~(1 << bitSelector);
+    }
 }

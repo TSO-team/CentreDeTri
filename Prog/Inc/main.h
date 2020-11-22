@@ -82,8 +82,8 @@ void Error_Handler(void);
 #define OTG_FS_PowerSwitchOn_GPIO_Port GPIOC
 #define PDM_OUT_Pin GPIO_PIN_3
 #define PDM_OUT_GPIO_Port GPIOC
-#define B1_Pin GPIO_PIN_0
-#define B1_GPIO_Port GPIOA
+#define testButton_Pin GPIO_PIN_0
+#define testButton_GPIO_Port GPIOA
 #define stepMotorB2_Pin GPIO_PIN_5
 #define stepMotorB2_GPIO_Port GPIOA
 #define stepMotorA2_Pin GPIO_PIN_6

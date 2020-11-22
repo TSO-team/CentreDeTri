@@ -9,6 +9,8 @@
 #define SERVICE_APPLICATIONOUTPUTHANDLER_H
 
 #include "service_stepperMotor.h"
+#include "service_lightHandler.h"
+#include "service_triac.h"
 
 /* put this in main.h if you're using it and it's not there
 #define PCF8574A_CHIP_ADDRESS 0x7A
@@ -34,27 +36,28 @@ typedef struct {
     isEndStageEnabled: 1,
     hasPositionProcessStarted: 1,
     
-    // 3 bits
-    greenLightInColumn: 1,
-    yellowLightInColumn: 1,
-    redLightInColumn: 1,
-    
-    // 4 bits
-    stepMotorA1: 1,
-    stepMotorA2: 1,
-    stepMotorB1: 1,
-    stepMotorB2: 1,
-    
-    // 1 bit
-    triac: 1,
-    
     // 10 bit
-    vide: 9;
+    vide: 17;
+    
+    // 32 bits
+    long stepperDestination;
     
 } service_applicationOutputHandler_Data;
 
+// unhandled data! Must empty this thing
+// it works, but it needs additionnal services. 
+// the goal is to put everything in usable structs
 extern service_applicationOutputHandler_Data service_applicationOutputHandler_data;
+
+// stepper motor position and destination handling
 extern service_stepperMotor_Stepper service_applicationOutputHandler_stepper;
+
+// light on, off, and blink handling
+extern service_lightHandler_Light service_applicationOutputHandler_greenLight;
+extern service_lightHandler_Light service_applicationOutputHandler_yellowLight;
+extern service_lightHandler_Light service_applicationOutputHandler_redLight;
+
+extern service_triac_Triac service_applicationOutputHandler_triac;
 
 void service_applicationOutputHandler_init();
 void service_applicationOutputHandler_update();

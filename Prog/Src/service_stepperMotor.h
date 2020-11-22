@@ -8,7 +8,7 @@ typedef struct {
     long destination;
     int velocity;
     float amountOfTimeThatStepperDidntMove;
-    void(*driveStepper)(unsigned char byteValue);
+    void (*driveOutput)(unsigned char outputByteValue);
 } service_stepperMotor_Stepper;
 
 void service_stepperMotor_init(service_stepperMotor_Stepper* stepper);
