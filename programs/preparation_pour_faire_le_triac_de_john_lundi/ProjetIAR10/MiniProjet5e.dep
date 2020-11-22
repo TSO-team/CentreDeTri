@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>4</fileVersion>
+    <fileChecksum>339612013</fileChecksum>
+    <configuration>
+        <name>Debug</name>
+        <outputs>
+            <file>$PROJ_DIR$\..\Outputs\Obj\Interruption.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\stdbool.h</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\Lcd.r51</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\bsp.__cstat.et</file>
+            <file>$PROJ_DIR$\..\Sources\Lcd.c</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\I2C.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\ioDS89C450.h</file>
+            <file>$PROJ_DIR$\..\Includes\Interruption.h</file>
+            <file>$PROJ_DIR$\..\Includes\I2C.h</file>
+            <file>$PROJ_DIR$\..\Includes\Leds.h</file>
+            <file>$TOOLKIT_DIR$\lib\dlib\dl-pli-nlxd-1e16x01n.r51</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\main.__cstat.et</file>
+            <file>$PROJ_DIR$\..\Outputs\Exe\MiniProjet.hex</file>
+            <file>$PROJ_DIR$\..\Includes\bsp.h</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\bsp.pbi</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\Interruption.r51</file>
+            <file>$PROJ_DIR$\..\Includes\main.h</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\StepMotor.__cstat.et</file>
+            <file>$PROJ_DIR$\..\Sources\Leds.c</file>
+            <file>$PROJ_DIR$\..\Includes\Lcd.h</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\Boutons.__cstat.et</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\MiniProjet5e.pbd</file>
+            <file>$PROJ_DIR$\..\Includes\StepMotor.h</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\8574.__cstat.et</file>
+            <file>$PROJ_DIR$\..\Outputs\List\MiniProjet.map</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\main.pbi</file>
+            <file>$PROJ_DIR$\..\Sources\Boutons.c</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\Leds.__cstat.et</file>
+            <file>$PROJ_DIR$\..\Sources\bsp.c</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\Lcd.__cstat.et</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\Boutons.pbi</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\Leds.r51</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\Interruption.pbi</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\Lcd.pbi</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\StepMotor.pbi</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\I2C.__cstat.et</file>
+            <file>$PROJ_DIR$\..\Sources\Interruption.c</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\8574.r51</file>
+            <file>$PROJ_DIR$\..\Includes\Boutons.h</file>
+            <file>$PROJ_DIR$\..\Sources\main.c</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\bsp.r51</file>
+            <file>$PROJ_DIR$\..\Includes\8574.h</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\Boutons.r51</file>
+            <file>$PROJ_DIR$\..\Sources\8574.C</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\I2C.r51</file>
+            <file>$TOOLKIT_DIR$\config\devices\Maxim integrated\lnk51ew_DS89C450.xcl</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\main.r51</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\StepMotor.r51</file>
+            <file>$PROJ_DIR$\..\Sources\StepMotor.c</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\Leds.pbi</file>
+            <file>$PROJ_DIR$\..\Sources\I2C.c</file>
+            <file>$PROJ_DIR$\..\Outputs\Obj\8574.pbi</file>
+            <file>$PROJ_DIR$\..\Outputs\Exe\Triac.hex</file>
+            <file>$PROJ_DIR$\..\Outputs\List\Triac.map</file>
+        </outputs>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 52 53</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Sources\Lcd.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC8051</name>
+                    <file> 2</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 33</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 29</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC8051</name>
+                    <file> 19</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 19</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Outputs\Exe\MiniProjet.hex</name>
+            <inputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 45 15 46 10</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Sources\Leds.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC8051</name>
+                    <file> 31</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 49</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 27</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC8051</name>
+                    <file> 9 6 1</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 6 9 1</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Sources\Boutons.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC8051</name>
+                    <file> 42</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 30</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 20</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC8051</name>
+                    <file> 6 38</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 6 38</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Sources\bsp.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC8051</name>
+                    <file> 40</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 14</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 3</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC8051</name>
+                    <file> 6 13</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 13 6</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Sources\Interruption.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC8051</name>
+                    <file> 15</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 32</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 0</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC8051</name>
+                    <file> 6 7 16</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 6 7 16</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Sources\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC8051</name>
+                    <file> 46</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 25</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 11</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC8051</name>
+                    <file> 6 16 7</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 6 16 7</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Sources\8574.C</name>
+            <outputs>
+                <tool>
+                    <name>ICC8051</name>
+                    <file> 37</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 51</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 23</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC8051</name>
+                    <file> 8 41</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 8 41</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Sources\StepMotor.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC8051</name>
+                    <file> 47</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 34</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 17</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC8051</name>
+                    <file> 6 22</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 22 6</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Sources\I2C.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC8051</name>
+                    <file> 44</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 5</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 35</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC8051</name>
+                    <file> 6 8</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 6 8</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\Outputs\Exe\Triac.hex</name>
+            <outputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 53</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>XLINK</name>
+                    <file> 45 15 46 10</file>
+                </tool>
+            </inputs>
+        </file>
+    </configuration>
+    <configuration>
+        <name>Release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>XLINK</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>[REBUILD_ALL]</name>
+        </forcedrebuild>
+    </configuration>
+</project>

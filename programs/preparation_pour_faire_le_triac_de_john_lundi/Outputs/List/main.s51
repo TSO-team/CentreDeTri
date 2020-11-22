@@ -1,0 +1,117 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.20.2.41139 for 8051            01/Nov/2020  16:24:53 /
+// Copyright 2004-2013 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  near                                              /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data                                              /
+//    Dptr setup         =  1,16                                              /
+//                                                                            /
+//    Source file        =  C:\working\Programme fourni\Sources\main.c        /
+//    Command line       =  "C:\working\Programme fourni\Sources\main.c" -lb  /
+//                          "C:\working\Programme fourni\Projet\..\Outputs\Li /
+//                          st\" -o "C:\working\Programme                     /
+//                          fourni\Projet\..\Outputs\Obj\" -e --no_cse        /
+//                          --no_unroll --no_inline --no_code_motion          /
+//                          --no_tbaa --debug --core=plain --dptr=16,1        /
+//                          --data_model=large --code_model=near              /
+//                          --calling_convention=xdata_reentrant              /
+//                          --place_constants=data --nr_virtual_regs 8        /
+//                          --dlib_config "C:\Program Files (x86)\IAR         /
+//                          Systems\Embedded Workbench                        /
+//                          6.4\8051\LIB\DLIB\dl8051Normal.h" -I              /
+//                          "C:\working\Programme fourni\Projet\..\Includes\" /
+//                           -Ol --eec++                                      /
+//    List file          =  C:\working\Programme fourni\Projet\..\Outputs\Lis /
+//                          t\main.s51                                        /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME main
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        ERROR
+//NOTE: This module defines or uses C++ features that are not
+//      accessible from assembler code. Assembling this file will
+//      not produce an equivalent object file to the one produced
+//      by the C++ compiler.
+
+        PUBWEAK _A_IE
+        PUBLIC main
+
+        EXTERN ??vInitInterruptOverflowT0
+        EXTERN ??vInitInterruptOverflowT1
+        EXTERN ??vInitTimer0
+        EXTERN ??vInitTimer1
+        EXTERN uTimingFlags
+
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IE
+_A_IE:
+        DATA8
+        DS 1
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+main:
+        CODE
+        ; Auto size: 0
+        CLR     0xa8.7
+        ; Setup parameters for call to function vInitTimer0()
+        LCALL   ??vInitTimer0
+        ; Setup parameters for call to function vInitInterruptOverflowT0()
+        LCALL   ??vInitInterruptOverflowT0
+        ; Setup parameters for call to function vInitTimer1()
+        LCALL   ??vInitTimer1
+        ; Setup parameters for call to function vInitInterruptOverflowT1()
+        LCALL   ??vInitInterruptOverflowT1
+        SETB    0xa8.7
+??main_0:
+        MOV     DPTR,#uTimingFlags
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??main_1
+        MOV     DPTR,#uTimingFlags
+        MOVX    A,@DPTR
+        CLR     0xE0 /* A   */.0
+        MOVX    @DPTR,A
+??main_1:
+        MOV     DPTR,#uTimingFlags
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.1
+        JNC     ??main_2
+        MOV     DPTR,#uTimingFlags
+        MOVX    A,@DPTR
+        CLR     0xE0 /* A   */.1
+        MOVX    @DPTR,A
+??main_2:
+        MOV     DPTR,#uTimingFlags
+        MOVX    A,@DPTR
+        MOV     C,0xE0 /* A   */.2
+        JNC     ??main_0
+        MOV     DPTR,#uTimingFlags
+        MOVX    A,@DPTR
+        CLR     0xE0 /* A   */.2
+        MOVX    @DPTR,A
+        SJMP    ??main_0
+        REQUIRE _A_IE
+
+        END
+// 
+// 63 bytes in segment NEAR_CODE
+//  1 byte  in segment SFR_AN
+// 
+// 63 bytes of CODE memory
+//  0 bytes of DATA memory (+ 1 byte shared)
+//
+//Errors: none
+//Warnings: none
