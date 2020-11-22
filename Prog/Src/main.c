@@ -38,19 +38,19 @@
 //TIM_Period = timer_tick_frequency / TIM_frequency - 1
 //il faut s'assurer que le compte pour la periode est plus petit que 65536
 
-#include "piloteTimer6Up.h"
-#include "piloteCAN1.h"
+#include "driver/timer/piloteTimer6Up.h"
+#include "driver/communication/piloteCAN1.h"
 
-#include "interface_mcp3021.h"
-#include "interface_pcf8574A.h"
-#include "interface_stepperMotor.h"
+#include "interface/carteIO/interface_mcp3021.h"
+#include "interface/carteIO/interface_pcf8574A.h"
+#include "interface/carteTriac/interface_stepperMotor.h"
     
-#include "serviceBaseDeTemps.h"
-#include "service_can.h"
-#include "service_applicationInputHandler.h"
-#include "service_applicationOutputHandler.h"
+#include "service/baseDeTemps/serviceBaseDeTemps.h"
+#include "service/communication/service_can.h"
+#include "service/appInput/service_applicationInputHandler.h"
+#include "service/appOutput/service_applicationOutputHandler.h"
     
-#include "process_centreDeTri.h"
+#include "process/centreDeTri/process_centreDeTri.h"
     
 /* USER CODE END Includes */
 
@@ -113,7 +113,6 @@ void main_initialiseApresLeHAL(void) {
   interface_pcf8574A_init();
   interface_stepperMotor_init();
   
-  service_can_init();
   service_applicationInputHandler_init();
   service_applicationOutputHandler_init();
   

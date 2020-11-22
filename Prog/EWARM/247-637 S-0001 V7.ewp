@@ -981,97 +981,97 @@
         <group>
           <name>communication</name>
           <file>
-            <name>$PROJ_DIR$\..\Src\driver_i2c.c</name>
+            <name>$PROJ_DIR$\..\Src\driver\communication\driver_i2c.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\driver_i2c.h</name>
+            <name>$PROJ_DIR$\..\Src\driver\communication\driver_i2c.h</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\piloteCAN1.c</name>
+            <name>$PROJ_DIR$\..\Src\driver\communication\piloteCAN1.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\piloteCAN1.h</name>
+            <name>$PROJ_DIR$\..\Src\driver\communication\piloteCAN1.h</name>
           </file>
         </group>
         <group>
           <name>lightColumn</name>
           <file>
-            <name>$PROJ_DIR$\..\Src\driver_greenLight.c</name>
+            <name>$PROJ_DIR$\..\Src\driver\lightColumn\driver_greenLight.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\driver_greenLight.h</name>
+            <name>$PROJ_DIR$\..\Src\driver\lightColumn\driver_greenLight.h</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\driver_redLight.c</name>
+            <name>$PROJ_DIR$\..\Src\driver\lightColumn\driver_redLight.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\driver_redLight.h</name>
+            <name>$PROJ_DIR$\..\Src\driver\lightColumn\driver_redLight.h</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\driver_yellowLight.c</name>
+            <name>$PROJ_DIR$\..\Src\driver\lightColumn\driver_yellowLight.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\driver_yellowLight.h</name>
+            <name>$PROJ_DIR$\..\Src\driver\lightColumn\driver_yellowLight.h</name>
           </file>
         </group>
         <group>
           <name>onBoardButton</name>
           <file>
-            <name>$PROJ_DIR$\..\Src\driver_testButton.c</name>
+            <name>$PROJ_DIR$\..\Src\driver\onBoardButton\driver_testButton.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\driver_testButton.h</name>
+            <name>$PROJ_DIR$\..\Src\driver\onBoardButton\driver_testButton.h</name>
           </file>
         </group>
         <group>
           <name>stepperMotor</name>
           <file>
-            <name>$PROJ_DIR$\..\Src\driver_stepperMotorA1.c</name>
+            <name>$PROJ_DIR$\..\Src\driver\stepperMotor\driver_stepperMotorA1.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\driver_stepperMotorA1.h</name>
+            <name>$PROJ_DIR$\..\Src\driver\stepperMotor\driver_stepperMotorA1.h</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\driver_stepperMotorA2.c</name>
+            <name>$PROJ_DIR$\..\Src\driver\stepperMotor\driver_stepperMotorA2.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\driver_stepperMotorA2.h</name>
+            <name>$PROJ_DIR$\..\Src\driver\stepperMotor\driver_stepperMotorA2.h</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\driver_stepperMotorB1.c</name>
+            <name>$PROJ_DIR$\..\Src\driver\stepperMotor\driver_stepperMotorB1.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\driver_stepperMotorB1.h</name>
+            <name>$PROJ_DIR$\..\Src\driver\stepperMotor\driver_stepperMotorB1.h</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\driver_stepperMotorB2.c</name>
+            <name>$PROJ_DIR$\..\Src\driver\stepperMotor\driver_stepperMotorB2.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\driver_stepperMotorB2.h</name>
+            <name>$PROJ_DIR$\..\Src\driver\stepperMotor\driver_stepperMotorB2.h</name>
           </file>
         </group>
         <group>
           <name>timer</name>
           <file>
-            <name>$PROJ_DIR$\..\Src\piloteTimer6Up.c</name>
+            <name>$PROJ_DIR$\..\Src\driver\timer\piloteTimer6Up.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\piloteTimer6Up.h</name>
+            <name>$PROJ_DIR$\..\Src\driver\timer\piloteTimer6Up.h</name>
           </file>
         </group>
         <group>
           <name>triac</name>
           <file>
-            <name>$PROJ_DIR$\..\Src\driver_passingByZero.c</name>
+            <name>$PROJ_DIR$\..\Src\driver\triac\driver_passingByZero.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\driver_passingByZero.h</name>
+            <name>$PROJ_DIR$\..\Src\driver\triac\driver_passingByZero.h</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\driver_triac.c</name>
+            <name>$PROJ_DIR$\..\Src\driver\triac\driver_triac.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\driver_triac.h</name>
+            <name>$PROJ_DIR$\..\Src\driver\triac\driver_triac.h</name>
           </file>
         </group>
       </group>
@@ -1080,199 +1080,226 @@
         <group>
           <name>carteIO</name>
           <file>
-            <name>$PROJ_DIR$\..\Src\interface_mcp3021.c</name>
+            <name>$PROJ_DIR$\..\Src\interface\carteIO\interface_mcp3021.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\interface_mcp3021.h</name>
+            <name>$PROJ_DIR$\..\Src\interface\carteIO\interface_mcp3021.h</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\interface_pcf8574A.c</name>
+            <name>$PROJ_DIR$\..\Src\interface\carteIO\interface_pcf8574A.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\interface_pcf8574A.h</name>
+            <name>$PROJ_DIR$\..\Src\interface\carteIO\interface_pcf8574A.h</name>
           </file>
         </group>
         <group>
           <name>carteTriac</name>
           <file>
-            <name>$PROJ_DIR$\..\Src\interface_stepperMotor.c</name>
+            <name>$PROJ_DIR$\..\Src\interface\carteTriac\interface_stepperMotor.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\interface_stepperMotor.h</name>
+            <name>$PROJ_DIR$\..\Src\interface\carteTriac\interface_stepperMotor.h</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\interface_triac.c</name>
+            <name>$PROJ_DIR$\..\Src\interface\carteTriac\interface_triac.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\interface_triac.h</name>
+            <name>$PROJ_DIR$\..\Src\interface\carteTriac\interface_triac.h</name>
           </file>
         </group>
         <group>
           <name>lightColumn</name>
           <file>
-            <name>$PROJ_DIR$\..\Src\interface_greenLight.c</name>
+            <name>$PROJ_DIR$\..\Src\interface\lightColumn\interface_greenLight.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\interface_greenLight.h</name>
+            <name>$PROJ_DIR$\..\Src\interface\lightColumn\interface_greenLight.h</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\interface_redLight.c</name>
+            <name>$PROJ_DIR$\..\Src\interface\lightColumn\interface_redLight.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\interface_redLight.h</name>
+            <name>$PROJ_DIR$\..\Src\interface\lightColumn\interface_redLight.h</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\interface_yellowLight.c</name>
+            <name>$PROJ_DIR$\..\Src\interface\lightColumn\interface_yellowLight.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\interface_yellowLight.h</name>
+            <name>$PROJ_DIR$\..\Src\interface\lightColumn\interface_yellowLight.h</name>
           </file>
         </group>
       </group>
       <group>
         <name>process</name>
         <group>
-          <name>modeActif</name>
+          <name>centreDeTri</name>
+          <group>
+            <name>modeActif</name>
+            <file>
+              <name>$PROJ_DIR$\..\Src\process\centreDeTri\modeActif\process_modeActif.c</name>
+            </file>
+            <file>
+              <name>$PROJ_DIR$\..\Src\process\centreDeTri\modeActif\process_modeActif.h</name>
+            </file>
+          </group>
+          <group>
+            <name>modeArret</name>
+            <file>
+              <name>$PROJ_DIR$\..\Src\process\centreDeTri\modeArret\process_modeArret.c</name>
+            </file>
+            <file>
+              <name>$PROJ_DIR$\..\Src\process\centreDeTri\modeArret\process_modeArret.h</name>
+            </file>
+          </group>
+          <group>
+            <name>modeAttente</name>
+            <file>
+              <name>$PROJ_DIR$\..\Src\process\centreDeTri\modeAttente\process_modeAttente.c</name>
+            </file>
+            <file>
+              <name>$PROJ_DIR$\..\Src\process\centreDeTri\modeAttente\process_modeAttente.h</name>
+            </file>
+          </group>
+          <group>
+            <name>modeErreur</name>
+            <file>
+              <name>$PROJ_DIR$\..\Src\process\centreDeTri\modeErreur\process_modeErreur.c</name>
+            </file>
+            <file>
+              <name>$PROJ_DIR$\..\Src\process\centreDeTri\modeErreur\process_modeErreur.h</name>
+            </file>
+          </group>
+          <group>
+            <name>modeInit</name>
+            <file>
+              <name>$PROJ_DIR$\..\Src\process\centreDeTri\modeInit\process_modeInit.c</name>
+            </file>
+            <file>
+              <name>$PROJ_DIR$\..\Src\process\centreDeTri\modeInit\process_modeInit.h</name>
+            </file>
+          </group>
+          <group>
+            <name>modeTest</name>
+            <file>
+              <name>$PROJ_DIR$\..\Src\process\centreDeTri\modeTest\process_modeTest.c</name>
+            </file>
+            <file>
+              <name>$PROJ_DIR$\..\Src\process\centreDeTri\modeTest\process_modeTest.h</name>
+            </file>
+          </group>
           <file>
-            <name>$PROJ_DIR$\..\Src\process_modeActif.c</name>
+            <name>$PROJ_DIR$\..\Src\process\centreDeTri\process_centreDeTri.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\process_modeActif.h</name>
+            <name>$PROJ_DIR$\..\Src\process\centreDeTri\process_centreDeTri.h</name>
           </file>
         </group>
-        <group>
-          <name>modeArret</name>
-          <file>
-            <name>$PROJ_DIR$\..\Src\process_modeArret.c</name>
-          </file>
-          <file>
-            <name>$PROJ_DIR$\..\Src\process_modeArret.h</name>
-          </file>
-        </group>
-        <group>
-          <name>modeAttente</name>
-          <file>
-            <name>$PROJ_DIR$\..\Src\process_modeAttente.c</name>
-          </file>
-          <file>
-            <name>$PROJ_DIR$\..\Src\process_modeAttente.h</name>
-          </file>
-        </group>
-        <group>
-          <name>modeErreur</name>
-          <file>
-            <name>$PROJ_DIR$\..\Src\process_modeErreur.c</name>
-          </file>
-          <file>
-            <name>$PROJ_DIR$\..\Src\process_modeErreur.h</name>
-          </file>
-        </group>
-        <group>
-          <name>modeInit</name>
-          <file>
-            <name>$PROJ_DIR$\..\Src\process_modeInit.c</name>
-          </file>
-          <file>
-            <name>$PROJ_DIR$\..\Src\process_modeInit.h</name>
-          </file>
-        </group>
-        <group>
-          <name>modeTest</name>
-          <file>
-            <name>$PROJ_DIR$\..\Src\process_modeTest.c</name>
-          </file>
-          <file>
-            <name>$PROJ_DIR$\..\Src\process_modeTest.h</name>
-          </file>
-        </group>
-        <file>
-          <name>$PROJ_DIR$\..\Src\process_centreDeTri.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\Src\process_centreDeTri.h</name>
-        </file>
       </group>
       <group>
         <name>service</name>
         <group>
           <name>appInput</name>
           <file>
-            <name>$PROJ_DIR$\..\Src\service_applicationInputHandler.c</name>
+            <name>$PROJ_DIR$\..\Src\service\appInput\service_applicationInputHandler.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\service_applicationInputHandler.h</name>
+            <name>$PROJ_DIR$\..\Src\service\appInput\service_applicationInputHandler.h</name>
           </file>
         </group>
         <group>
           <name>appOutput</name>
           <file>
-            <name>$PROJ_DIR$\..\Src\service_applicationOutputHandler.c</name>
+            <name>$PROJ_DIR$\..\Src\service\appOutput\service_applicationOutputHandler.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\service_applicationOutputHandler.h</name>
+            <name>$PROJ_DIR$\..\Src\service\appOutput\service_applicationOutputHandler.h</name>
+          </file>
+        </group>
+        <group>
+          <name>baseDeTemps</name>
+          <file>
+            <name>$PROJ_DIR$\..\Src\service\baseDeTemps\serviceBaseDeTemps.c</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\service\baseDeTemps\serviceBaseDeTemps.h</name>
           </file>
         </group>
         <group>
           <name>button</name>
           <file>
-            <name>$PROJ_DIR$\..\Src\service_buttonUtils.c</name>
+            <name>$PROJ_DIR$\..\Src\service\button\service_buttonUtils.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\service_buttonUtils.h</name>
+            <name>$PROJ_DIR$\..\Src\service\button\service_buttonUtils.h</name>
           </file>
         </group>
         <group>
           <name>communication</name>
           <file>
-            <name>$PROJ_DIR$\..\Src\service_can.c</name>
+            <name>$PROJ_DIR$\..\Src\service\communication\service_can.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\service_can.h</name>
+            <name>$PROJ_DIR$\..\Src\service\communication\service_can.h</name>
           </file>
         </group>
         <group>
           <name>lightHandling</name>
           <group>
-            <name>state</name>
+            <name>machine</name>
             <file>
-              <name>$PROJ_DIR$\..\Src\service_lightHandlerBlinkOff.c</name>
+              <name>$PROJ_DIR$\..\Src\service\lightHandling\machine\service_lightHandler.c</name>
             </file>
             <file>
-              <name>$PROJ_DIR$\..\Src\service_lightHandlerBlinkOff.h</name>
-            </file>
-            <file>
-              <name>$PROJ_DIR$\..\Src\service_lightHandlerBlinkOn.c</name>
-            </file>
-            <file>
-              <name>$PROJ_DIR$\..\Src\service_lightHandlerBlinkOn.h</name>
-            </file>
-            <file>
-              <name>$PROJ_DIR$\..\Src\service_lightHandlerOff.c</name>
-            </file>
-            <file>
-              <name>$PROJ_DIR$\..\Src\service_lightHandlerOff.h</name>
-            </file>
-            <file>
-              <name>$PROJ_DIR$\..\Src\service_lightHandlerOn.c</name>
-            </file>
-            <file>
-              <name>$PROJ_DIR$\..\Src\service_lightHandlerOn.h</name>
+              <name>$PROJ_DIR$\..\Src\service\lightHandling\machine\service_lightHandler.h</name>
             </file>
           </group>
-          <file>
-            <name>$PROJ_DIR$\..\Src\service_lightHandler.c</name>
-          </file>
-          <file>
-            <name>$PROJ_DIR$\..\Src\service_lightHandler.h</name>
-          </file>
+          <group>
+            <name>state</name>
+            <group>
+              <name>blinkOff</name>
+              <file>
+                <name>$PROJ_DIR$\..\Src\service\lightHandling\state\blinkOff\service_lightHandlerBlinkOff.c</name>
+              </file>
+              <file>
+                <name>$PROJ_DIR$\..\Src\service\lightHandling\state\blinkOff\service_lightHandlerBlinkOff.h</name>
+              </file>
+            </group>
+            <group>
+              <name>blinkOn</name>
+              <file>
+                <name>$PROJ_DIR$\..\Src\service\lightHandling\state\blinkOn\service_lightHandlerBlinkOn.c</name>
+              </file>
+              <file>
+                <name>$PROJ_DIR$\..\Src\service\lightHandling\state\blinkOn\service_lightHandlerBlinkOn.h</name>
+              </file>
+            </group>
+            <group>
+              <name>off</name>
+              <file>
+                <name>$PROJ_DIR$\..\Src\service\lightHandling\state\off\service_lightHandlerOff.c</name>
+              </file>
+              <file>
+                <name>$PROJ_DIR$\..\Src\service\lightHandling\state\off\service_lightHandlerOff.h</name>
+              </file>
+            </group>
+            <group>
+              <name>on</name>
+              <file>
+                <name>$PROJ_DIR$\..\Src\service\lightHandling\state\on\service_lightHandlerOn.c</name>
+              </file>
+              <file>
+                <name>$PROJ_DIR$\..\Src\service\lightHandling\state\on\service_lightHandlerOn.h</name>
+              </file>
+            </group>
+          </group>
         </group>
         <group>
           <name>math</name>
           <file>
-            <name>$PROJ_DIR$\..\Src\service_bitOperation.c</name>
+            <name>$PROJ_DIR$\..\Src\service\math\service_bitOperation.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\service_bitOperation.h</name>
+            <name>$PROJ_DIR$\..\Src\service\math\service_bitOperation.h</name>
           </file>
         </group>
         <group>
@@ -1282,10 +1309,10 @@
             <group>
               <name>machine</name>
               <file>
-                <name>$PROJ_DIR$\..\Src\service_stateMachineTest.c</name>
+                <name>$PROJ_DIR$\..\Src\service\stateMachine\test\machine\service_stateMachineTest.c</name>
               </file>
               <file>
-                <name>$PROJ_DIR$\..\Src\service_stateMachineTest.h</name>
+                <name>$PROJ_DIR$\..\Src\service\stateMachine\test\machine\service_stateMachineTest.h</name>
               </file>
             </group>
             <group>
@@ -1293,54 +1320,54 @@
               <group>
                 <name>off</name>
                 <file>
-                  <name>$PROJ_DIR$\..\Src\service_stateMachineTestOffState.c</name>
+                  <name>$PROJ_DIR$\..\Src\service\stateMachine\test\state\off\service_stateMachineTestOffState.c</name>
                 </file>
                 <file>
-                  <name>$PROJ_DIR$\..\Src\service_stateMachineTestOffState.h</name>
+                  <name>$PROJ_DIR$\..\Src\service\stateMachine\test\state\off\service_stateMachineTestOffState.h</name>
                 </file>
               </group>
               <group>
                 <name>on</name>
                 <file>
-                  <name>$PROJ_DIR$\..\Src\service_stateMachineTestOnState.c</name>
+                  <name>$PROJ_DIR$\..\Src\service\stateMachine\test\state\on\service_stateMachineTestOnState.c</name>
                 </file>
                 <file>
-                  <name>$PROJ_DIR$\..\Src\service_stateMachineTestOnState.h</name>
+                  <name>$PROJ_DIR$\..\Src\service\stateMachine\test\state\on\service_stateMachineTestOnState.h</name>
                 </file>
               </group>
             </group>
           </group>
           <file>
-            <name>$PROJ_DIR$\..\Src\service_stateMachine.c</name>
+            <name>$PROJ_DIR$\..\Src\service\stateMachine\service_stateMachine.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\service_stateMachine.h</name>
+            <name>$PROJ_DIR$\..\Src\service\stateMachine\service_stateMachine.h</name>
           </file>
         </group>
         <group>
           <name>stepperMotor</name>
           <file>
-            <name>$PROJ_DIR$\..\Src\service_stepperMotor.c</name>
+            <name>$PROJ_DIR$\..\Src\service\stepperMotor\service_stepperMotor.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\service_stepperMotor.h</name>
+            <name>$PROJ_DIR$\..\Src\service\stepperMotor\service_stepperMotor.h</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\service\stepperMotor\service_vacuumStepper.c</name>
+          </file>
+          <file>
+            <name>$PROJ_DIR$\..\Src\service\stepperMotor\service_vacuumStepper.h</name>
           </file>
         </group>
         <group>
           <name>triac</name>
           <file>
-            <name>$PROJ_DIR$\..\Src\service_triac.c</name>
+            <name>$PROJ_DIR$\..\Src\service\triac\service_triac.c</name>
           </file>
           <file>
-            <name>$PROJ_DIR$\..\Src\service_triac.h</name>
+            <name>$PROJ_DIR$\..\Src\service\triac\service_triac.h</name>
           </file>
         </group>
-        <file>
-          <name>$PROJ_DIR$\..\Src\serviceBaseDeTemps.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\Src\serviceBaseDeTemps.h</name>
-        </file>
       </group>
       <file>
         <name>$PROJ_DIR$\..\Src\main.c</name>
